@@ -176,12 +176,13 @@ function showDemoPortfolio() {
 
 // Video Management
 let videoData = [];
+let currentVideoFilter = 'all';
 
 async function initializeVideos() {
     try {
         showLoadingState('videoGrid');
         
-        if (SANITY_CONFIG.projectId !== 'YOUR_PROJECT_ID') {
+        if (SANITY_CONFIG.projectId !== 'xotjnbwo') {
             videoData = await fetchVideosFromSanity();
             renderVideos();
         } else {
@@ -191,6 +192,17 @@ async function initializeVideos() {
         console.error('Error loading videos:', error);
         showErrorState('videoGrid', 'Failed to load videos');
     }
+    
+    // Setup video filter buttons
+    const videoFilterButtons = document.querySelectorAll('.video-filters .filter-btn');
+    videoFilterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            videoFilterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            currentVideoFilter = this.dataset.filter;
+            renderVideos();
+        });
+    });
 }
 
 async function fetchVideosFromSanity() {
@@ -214,14 +226,18 @@ function renderVideos() {
     const grid = document.getElementById('videoGrid');
     if (!grid) return;
 
+    const filteredData = currentVideoFilter === 'all' 
+        ? videoData 
+        : videoData.filter(item => item.category === currentVideoFilter);
+
     grid.innerHTML = '';
     
-    if (videoData.length === 0) {
-        grid.innerHTML = '<div class="no-items">No videos found</div>';
+    if (filteredData.length === 0) {
+        grid.innerHTML = '<div class="no-items">No videos found in this category</div>';
         return;
     }
 
-    videoData.forEach(video => {
+    filteredData.forEach(video => {
         const videoItem = createVideoItem(video);
         grid.appendChild(videoItem);
     });
@@ -249,27 +265,11 @@ function createVideoItem(video) {
 }
 
 function showDemoVideos() {
-    const grid = document.getElementById('videoGrid');
-    if (!grid) return;
-
-    grid.innerHTML = `
-        <div class="video-item demo">
-            <div class="loading-placeholder"></div>
-            <div class="play-button"></div>
-            <div class="video-info">
-                <h3>Demo Video</h3>
-                <p>Connect Sanity CMS to load your videos</p>
-            </div>
-        </div>
-        <div class="video-item demo">
-            <div class="loading-placeholder"></div>
-            <div class="play-button"></div>
-            <div class="video-info">
-                <h3>Demo Video</h3>
-                <p>Connect Sanity CMS to load your videos</p>
-            </div>
-        </div>
-    `;
+    // Use actual demo data with your videos
+    if (typeof useDemoData === 'function') {
+        // Demo data is already loaded, just render
+        renderVideos();
+    }
 }
 
 function openVideo(youtubeUrl) {

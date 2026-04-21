@@ -72,6 +72,7 @@ const demoVideoData = [
         title: 'Visual Story I',
         description: 'Cinematic storytelling and visual narrative',
         youtubeUrl: 'https://youtu.be/rE1j-sjP5Hk',
+        category: 'commercial',
         featured: true
     },
     {
@@ -79,6 +80,7 @@ const demoVideoData = [
         title: 'Creative Vision II',
         description: 'Artistic cinematography and direction',
         youtubeUrl: 'https://youtu.be/lFmQFlIdyr4',
+        category: 'music',
         featured: true
     },
     {
@@ -86,6 +88,7 @@ const demoVideoData = [
         title: 'Production Work III',
         description: 'Professional video production showcase',
         youtubeUrl: 'https://youtu.be/2K8KQEcXv4s',
+        category: 'documentary',
         featured: false
     },
     {
@@ -93,6 +96,7 @@ const demoVideoData = [
         title: 'Visual Narrative IV',
         description: 'Documentary and commercial work',
         youtubeUrl: 'https://youtu.be/bDU3xlj6Wzc',
+        category: 'commercial',
         featured: true
     },
     {
@@ -100,6 +104,7 @@ const demoVideoData = [
         title: 'Cinematic Piece V',
         description: 'Creative direction and cinematography',
         youtubeUrl: 'https://youtu.be/xmdVEgJ3gIM',
+        category: 'corporate',
         featured: false
     },
     {
@@ -107,6 +112,7 @@ const demoVideoData = [
         title: 'Latest Work VI',
         description: 'Recent cinematography and production',
         youtubeUrl: 'https://youtu.be/-d6ffZjZvPk',
+        category: 'event',
         featured: true
     }
 ];
