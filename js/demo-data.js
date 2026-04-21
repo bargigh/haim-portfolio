@@ -3,9 +3,9 @@ const demoPortfolioData = [
     {
         _id: '1',
         title: 'Abstract Form',
-        description: 'Black and white artistic nude study',
+        description: 'Black and white artistic nude study - Hero piece',
         category: 'portrait',
-        image: 'assets/images/portrait-01.jpg',
+        image: 'assets/images/portrait-hero-01.jpg',
         featured: true
     },
     {
@@ -13,7 +13,7 @@ const demoPortfolioData = [
         title: 'Studio Elegance',
         description: 'Classic studio portrait with dramatic lighting',
         category: 'studio',
-        image: 'assets/images/studio-01.jpg',
+        image: 'assets/images/studio-flagship-01.jpg',
         featured: true
     },
     {
@@ -21,7 +21,7 @@ const demoPortfolioData = [
         title: 'Urban Solitude',
         description: 'City skyline portrait with contemplative mood',
         category: 'portrait',
-        image: 'assets/images/portrait-02.jpg',
+        image: 'assets/images/portrait-excellence-02.jpg',
         featured: false
     },
     {
@@ -29,7 +29,7 @@ const demoPortfolioData = [
         title: 'Light & Shadow',
         description: 'Experimental lighting with dramatic contrast',
         category: 'commercial',
-        image: 'assets/images/commercial-01.jpg',
+        image: 'assets/images/commercial-mastery-01.jpg',
         featured: true
     },
     {
@@ -37,7 +37,7 @@ const demoPortfolioData = [
         title: 'Industrial Beauty',
         description: 'Behind-the-scenes production photography',
         category: 'commercial',
-        image: 'assets/images/commercial-02.jpg',
+        image: 'assets/images/commercial-excellence-02.jpg',
         featured: false
     },
     {
@@ -45,7 +45,7 @@ const demoPortfolioData = [
         title: 'Golden Hour',
         description: 'Portrait with warm dramatic lighting',
         category: 'portrait',
-        image: 'assets/images/portrait-03.jpg',
+        image: 'assets/images/portrait-dramatic-03.jpg',
         featured: true
     },
     {
@@ -53,7 +53,7 @@ const demoPortfolioData = [
         title: 'Intimate Moment',
         description: 'Couple portrait with soft lighting',
         category: 'portrait',
-        image: 'assets/images/portrait-04.jpg',
+        image: 'assets/images/portrait-artistic-04.jpg',
         featured: false
     },
     {
@@ -61,7 +61,7 @@ const demoPortfolioData = [
         title: 'Rooftop Session',
         description: 'Architectural studio photography',
         category: 'studio',
-        image: 'assets/images/studio-02.jpg',
+        image: 'assets/images/studio-professional-02.jpg',
         featured: true
     }
 ];
