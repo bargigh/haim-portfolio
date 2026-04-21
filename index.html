@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haim Bargig - Photographer & Cinematographer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>Haim Bargig</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Visual Storytelling</h1>
+                <p class="hero-subtitle">Photographer & Cinematographer</p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                </div>
+            </div>
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">Photography Portfolio</h2>
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="portrait">Portraits</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn" data-filter="events">Events</button>
+                    <button class="filter-btn" data-filter="studio">Studio</button>
+                </div>
+                <div class="portfolio-grid" id="portfolioGrid">
+                    <!-- Images will be loaded dynamically from Sanity -->
+                    <div class="portfolio-item loading">
+                        <div class="loading-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="videos" class="videos">
+            <div class="container">
+                <h2 class="section-title">Cinematography</h2>
+                <div class="video-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn" data-filter="music">Music Video</button>
+                    <button class="filter-btn" data-filter="documentary">Documentary</button>
+                    <button class="filter-btn" data-filter="corporate">Corporate</button>
+                    <button class="filter-btn" data-filter="event">Event</button>
+                </div>
+                <div class="video-grid" id="videoGrid">
+                    <!-- Videos will be loaded dynamically from Sanity -->
+                    <div class="video-item loading">
+                        <div class="loading-placeholder"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Haim</h2>
+                        <p>Professional photographer and cinematographer with a passion for visual storytelling. Specializing in portraits, commercial photography, and cinematic productions.</p>
+                        <p>Studio space available for rent by hour or day for fellow artists and creators.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="" alt="Haim Bargig" id="aboutImage">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Let's Work Together</h2>
+                <div class="contact-info">
+                    <p>Ready to bring your vision to life?</p>
+                    <p>Studio rentals available for artists and creators.</p>
+                    <div class="contact-links">
+                        <a href="mailto:bargigh@gmail.com" class="contact-btn">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Haim Bargig. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+        <div class="lightbox-nav">
+            <button id="prevBtn">&larr;</button>
+            <button id="nextBtn">&rarr;</button>
+        </div>
+    </div>
+
+    <script src="js/demo-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
