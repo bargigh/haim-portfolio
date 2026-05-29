@@ -1,127 +1,43 @@
-// Demo portfolio data with actual photos
+// Professional portfolio data - hosted directly on Dropbox
 const demoPortfolioData = [
     {
         _id: '1',
-        title: 'Abstract Form',
-        description: 'Black and white artistic nude study - Hero piece',
-        category: 'portrait',
-        image: 'assets/images/portrait-hero-01.jpg',
+        title: 'Fashion Commercial Mastery',
+        description: 'Professional commercial photography - Top tier work',
+        category: 'commercial',
+        image: 'https://www.dropbox.com/scl/fo/63fodmhvmvepw0whaos5m/AC4VAQBHx3-cz2D7gZZ_Xbg/2X3A0044.jpg?rlkey=7gn9nvbxy1170m45kb6w371z2&dl=1',
         featured: true
     },
     {
         _id: '2',
-        title: 'Studio Elegance',
-        description: 'Classic studio portrait with dramatic lighting',
-        category: 'studio',
-        image: 'assets/images/studio-flagship-01.jpg',
+        title: 'Ultra High Resolution Cover',
+        description: 'Gallery-quality TIFF masterpiece',
+        category: 'portrait',
+        image: 'https://www.dropbox.com/scl/fo/63fodmhvmvepw0whaos5m/AFbfDBc8p-oLpw-PAalxhwE/1.tif?rlkey=7gn9nvbxy1170m45kb6w371z2&dl=1',
         featured: true
     },
     {
         _id: '3',
-        title: 'Urban Solitude',
-        description: 'City skyline portrait with contemplative mood',
-        category: 'portrait',
-        image: 'assets/images/portrait-excellence-02.jpg',
-        featured: false
+        title: 'Professional Copy Work',
+        description: 'Commercial excellence with dramatic lighting',
+        category: 'commercial',
+        image: 'https://www.dropbox.com/scl/fo/63fodmhvmvepw0whaos5m/AHbJKhGOymr6F2G_4mC0c6U/2X3A0406%20copy.jpg?rlkey=7gn9nvbxy1170m45kb6w371z2&dl=1',
+        featured: true
     },
     {
         _id: '4',
-        title: 'Light & Shadow',
-        description: 'Experimental lighting with dramatic contrast',
-        category: 'commercial',
-        image: 'assets/images/commercial-mastery-01.jpg',
+        title: 'Studio Excellence',
+        description: 'Professional studio photography mastery',
+        category: 'studio',
+        image: 'https://www.dropbox.com/scl/fo/63fodmhvmvepw0whaos5m/AEiTmBTcTNHuG7vk0F64jBc/2X3A5501.jpg?rlkey=7gn9nvbxy1170m45kb6w371z2&dl=1',
         featured: true
     },
     {
         _id: '5',
-        title: 'Industrial Beauty',
-        description: 'Behind-the-scenes production photography',
-        category: 'commercial',
-        image: 'assets/images/commercial-excellence-02.jpg',
-        featured: false
-    },
-    {
-        _id: '6',
-        title: 'Golden Hour',
-        description: 'Portrait with warm dramatic lighting',
+        title: 'Portrait Series',
+        description: 'Professional portrait work',
         category: 'portrait',
-        image: 'assets/images/portrait-dramatic-03.jpg',
-        featured: true
-    },
-    {
-        _id: '7',
-        title: 'Intimate Moment',
-        description: 'Couple portrait with soft lighting',
-        category: 'portrait',
-        image: 'assets/images/portrait-artistic-04.jpg',
+        image: 'https://www.dropbox.com/scl/fo/63fodmhvmvepw0whaos5m/AOoTMAapiO-KdhjfzUsb8NQ/2X3A5345.jpg?rlkey=7gn9nvbxy1170m45kb6w371z2&dl=1',
         featured: false
-    },
-    {
-        _id: '8',
-        title: 'Rooftop Session',
-        description: 'Architectural studio photography',
-        category: 'studio',
-        image: 'assets/images/studio-professional-02.jpg',
-        featured: true
     }
 ];
-
-const demoVideoData = [
-    {
-        _id: 'v1',
-        title: 'Visual Story I',
-        description: 'Cinematic storytelling and visual narrative',
-        youtubeUrl: 'https://youtu.be/rE1j-sjP5Hk',
-        category: 'commercial',
-        featured: true
-    },
-    {
-        _id: 'v2',
-        title: 'Creative Vision II',
-        description: 'Artistic cinematography and direction',
-        youtubeUrl: 'https://youtu.be/lFmQFlIdyr4',
-        category: 'music',
-        featured: true
-    },
-    {
-        _id: 'v3',
-        title: 'Production Work III',
-        description: 'Professional video production showcase',
-        youtubeUrl: 'https://youtu.be/2K8KQEcXv4s',
-        category: 'documentary',
-        featured: false
-    },
-    {
-        _id: 'v4',
-        title: 'Visual Narrative IV',
-        description: 'Documentary and commercial work',
-        youtubeUrl: 'https://youtu.be/bDU3xlj6Wzc',
-        category: 'commercial',
-        featured: true
-    },
-    {
-        _id: 'v5',
-        title: 'Cinematic Piece V',
-        description: 'Creative direction and cinematography',
-        youtubeUrl: 'https://youtu.be/xmdVEgJ3gIM',
-        category: 'corporate',
-        featured: false
-    },
-    {
-        _id: 'v6',
-        title: 'Latest Work VI',
-        description: 'Recent cinematography and production',
-        youtubeUrl: 'https://youtu.be/-d6ffZjZvPk',
-        category: 'event',
-        featured: true
-    }
-];
-
-// Function to use demo data when Sanity is not available
-function useDemoData() {
-    portfolioData = demoPortfolioData;
-    videoData = demoVideoData;
-    
-    renderPortfolio();
-    renderVideos();
-}
