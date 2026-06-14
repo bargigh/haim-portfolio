@@ -83,11 +83,10 @@ async function initializePortfolio() {
         showLoadingState('portfolioGrid');
         
         // This will be replaced with actual Sanity data fetching
-        if (SANITY_CONFIG.projectId !== 'YOUR_PROJECT_ID') {
-            portfolioData = await fetchPortfolioFromSanity();
+        portfolioData = await fetchPortfolioFromSanity();
+        if (portfolioData.length > 0) {
             renderPortfolio();
         } else {
-            // Show demo content for now
             showDemoPortfolio();
         }
     } catch (error) {
@@ -182,8 +181,8 @@ async function initializeVideos() {
     try {
         showLoadingState('videoGrid');
         
-        if (SANITY_CONFIG.projectId !== 'xotjnbwo') {
-            videoData = await fetchVideosFromSanity();
+        videoData = await fetchVideosFromSanity();
+        if (videoData.length > 0) {
             renderVideos();
         } else {
             showDemoVideos();
@@ -206,13 +205,15 @@ async function initializeVideos() {
 }
 
 async function fetchVideosFromSanity() {
-    const query = `*[_type == "video"] | order(orderRank) {
+    const query = `*[_type == "video" && visible == true] | order(order asc) {
         _id,
         title,
         description,
         youtubeUrl,
         customThumbnail,
-        featured
+        featured,
+        "category": category->slug.current,
+        visible
     }`;
     
     const url = `https://${SANITY_CONFIG.projectId}.api.sanity.io/v${SANITY_CONFIG.apiVersion}/data/query/${SANITY_CONFIG.dataset}?query=${encodeURIComponent(query)}`;
