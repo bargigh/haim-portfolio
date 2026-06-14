@@ -265,9 +265,8 @@ function createVideoItem(video) {
 }
 
 function showDemoVideos() {
-    // Use actual demo data with your videos
-    if (typeof useDemoData === 'function') {
-        // Demo data is already loaded, just render
+    if (typeof demoVideoData !== 'undefined') {
+        videoData = demoVideoData;
         renderVideos();
     }
 }
