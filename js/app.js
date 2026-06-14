@@ -401,3 +401,30 @@ window.addEventListener('scroll', function() {
         navbar.style.background = 'rgba(10, 10, 10, 0.95)';
     }
 });
+// Hidden events gallery — activated via ?events URL param
+(function() {
+    if (window.location.search.includes('events')) {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show events heading
+            const section = document.getElementById('portfolio');
+            if (section) {
+                const title = section.querySelector('.section-title');
+                if (title) title.textContent = 'Events Portfolio';
+            }
+            // Force events filter
+            currentFilter = 'events';
+            // Add visible events button
+            const filters = document.querySelector('.portfolio-filters');
+            if (filters) {
+                filters.style.display = 'none'; // hide filter bar entirely for clean look
+            }
+            // Re-render after data loads
+            const orig = window.useDemoData;
+            window.useDemoData = function() {
+                portfolioData = demoPortfolioData;
+                currentFilter = 'events';
+                renderPortfolio();
+            };
+        });
+    }
+})();
