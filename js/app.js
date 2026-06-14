@@ -153,13 +153,8 @@ function createPortfolioItem(item, index) {
     const imageUrl = item.image.startsWith('assets/') ? item.image : imageUrlFor(item.image, 800, 600);
     
     div.innerHTML = `
-        <img src="${imageUrl}" alt="${item.title}" loading="lazy">
-        <div class="portfolio-overlay">
-            <div class="portfolio-info">
-                <h3>${item.title}</h3>
-                <p>${item.description || ''}</p>
-            </div>
-        </div>
+        <img src="${imageUrl}" alt="" loading="lazy">
+        <div class="portfolio-overlay"></div>
     `;
     
     div.addEventListener('click', () => openLightbox(index));
@@ -302,11 +297,20 @@ function initializeLightbox() {
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (!lightbox?.classList.contains('active')) return;
-        
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') navigateLightbox(-1);
         if (e.key === 'ArrowRight') navigateLightbox(1);
     });
+
+    // Touch / swipe navigation
+    let touchStartX = 0;
+    lightbox?.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    }, {passive: true});
+    lightbox?.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) navigateLightbox(diff > 0 ? 1 : -1);
+    }, {passive: true});
 }
 
 function openLightbox(index) {
@@ -363,7 +367,7 @@ function updateLightboxContent() {
         lightboxImage.alt = item.title;
     }
     
-    if (lightboxTitle) lightboxTitle.textContent = item.title;
+    if (lightboxTitle) lightboxTitle.textContent = '';
     if (lightboxDescription) lightboxDescription.textContent = item.description || '';
 }
 

@@ -353,192 +353,12 @@ function useDemoData() {
 
 const demoVideoData = [
   {
-    "_id": "kakO_AU1f10",
-    "title": "Jorny 2024",
+    "_id": "xmdVEgJ3gIM",
+    "title": "SHANTI - Fall in Love",
     "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=kakO_AU1f10",
-    "category": "documentary",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "9Clt1mbR1P4",
-    "title": "Point NYC - Agent",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=9Clt1mbR1P4",
-    "category": "commercial",
-    "featured": true,
-    "visible": true
-  },
-  {
-    "_id": "f8OGfoKVB-g",
-    "title": "MiNiT - Right on Time",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=f8OGfoKVB-g",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "4TVobibQgmc",
-    "title": "Osif Gonen",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=4TVobibQgmc",
-    "category": "documentary",
-    "featured": true,
-    "visible": true
-  },
-  {
-    "_id": "nVMpwnxcbMs",
-    "title": "PLACE IL - Thank You",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=nVMpwnxcbMs",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "IubzXrmrRhw",
-    "title": "ALPHA NYC",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=IubzXrmrRhw",
-    "category": "commercial",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "VH3O_dm105s",
-    "title": "Sipurei Hayot",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=VH3O_dm105s",
-    "category": "documentary",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "38PsCmjMrSY",
-    "title": "Variation VII - Blacksmith ft. Maddy Prior",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=38PsCmjMrSY",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "k3FAN3E7s_c",
-    "title": "Y&I - L E M",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=k3FAN3E7s_c",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "31gcaQ3isZY",
-    "title": "Roy Gurel - Sophia",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=31gcaQ3isZY",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "EufFox-rQoc",
-    "title": "Nogiloh - Levy Falkowitz",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=EufFox-rQoc",
+    "youtubeUrl": "https://www.youtube.com/watch?v=xmdVEgJ3gIM",
     "category": "music",
     "featured": true,
-    "visible": true
-  },
-  {
-    "_id": "PMVY0tJY5xA",
-    "title": "Keren Botaro - Keep Walking",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=PMVY0tJY5xA",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "S7A7plmuOx8",
-    "title": "אין לי ארץ אחרת - Ukrainian Version",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=S7A7plmuOx8",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "SWsXDL-JZW0",
-    "title": "Nimo Kally - Keeping 'em Honest",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=SWsXDL-JZW0",
-    "category": "music",
-    "featured": true,
-    "visible": true
-  },
-  {
-    "_id": "VaRq2PREjFI",
-    "title": "Zoo Berries - Back in Time",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=VaRq2PREjFI",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "1Q0N9KkDZGc",
-    "title": "Total Entertainment - Duo",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=1Q0N9KkDZGc",
-    "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "CYlvwd2E5mM",
-    "title": "Total Entertainment",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=CYlvwd2E5mM",
-    "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "VMmNzIf_-7k",
-    "title": "Total Entertainment - Motown Soul",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=VMmNzIf_-7k",
-    "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "wTily2ozmhQ",
-    "title": "Shmendrix - Lisbon",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=wTily2ozmhQ",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "Jq6dz0ZUkF8",
-    "title": "Pause Retreat",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=Jq6dz0ZUkF8",
-    "category": "documentary",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "Shgj2hb0Tss",
-    "title": "Niv Kaikov - Lovers on the Sun (David Guetta Cover)",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=Shgj2hb0Tss",
-    "category": "music",
-    "featured": false,
     "visible": true
   },
   {
@@ -546,69 +366,6 @@ const demoVideoData = [
     "title": "משינה - החומר החדש",
     "description": "",
     "youtubeUrl": "https://www.youtube.com/watch?v=SK85bbY4dGo",
-    "category": "music",
-    "featured": true,
-    "visible": true
-  },
-  {
-    "_id": "2K8KQEcXv4s",
-    "title": "Seasonal Beast - This Is Where (Live at the Hive)",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=2K8KQEcXv4s",
-    "category": "live",
-    "featured": true,
-    "visible": true
-  },
-  {
-    "_id": "1NHoKHk2S6s",
-    "title": "HomeBiogas - Tips & Tricks",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=1NHoKHk2S6s",
-    "category": "commercial",
-    "featured": true,
-    "visible": true
-  },
-  {
-    "_id": "HGNmRrlmVUk",
-    "title": "האבן השלישית",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=HGNmRrlmVUk",
-    "category": "documentary",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "iSRVJ0oRe_M",
-    "title": "עמוס שפירא - Interview",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=iSRVJ0oRe_M",
-    "category": "documentary",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "3dN3TWJxbgs",
-    "title": "Avi Nesher - Script Writing",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=3dN3TWJxbgs",
-    "category": "documentary",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "lpoOItA-nZI",
-    "title": "Let's Talk About It",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=lpoOItA-nZI",
-    "category": "documentary",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "xmdVEgJ3gIM",
-    "title": "SHANTI - Fall in Love",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=xmdVEgJ3gIM",
     "category": "music",
     "featured": true,
     "visible": true
@@ -623,33 +380,6 @@ const demoVideoData = [
     "visible": true
   },
   {
-    "_id": "WWNvN46TgSs",
-    "title": "קמילה - תרקוד איתי",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=WWNvN46TgSs",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "bDU3xlj6Wzc",
-    "title": "דניאל סלומון ואדם בן אמיתי - נאמר כבר הכל",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=bDU3xlj6Wzc",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "nCZcCbAVcC8",
-    "title": "Yula Be'eri & The Extended Family - NOW",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=nCZcCbAVcC8",
-    "category": "music",
-    "featured": true,
-    "visible": true
-  },
-  {
     "_id": "mZDPNI4GlgE",
     "title": "Levy Falkowitz - Toiv Li ft. Yedidim Choir",
     "description": "",
@@ -659,48 +389,21 @@ const demoVideoData = [
     "visible": true
   },
   {
-    "_id": "9kGzv1K3WgY",
-    "title": "Nitan Ben Ari - Tipa Emet",
+    "_id": "EufFox-rQoc",
+    "title": "Nogiloh - Levy Falkowitz",
     "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=9kGzv1K3WgY",
+    "youtubeUrl": "https://www.youtube.com/watch?v=EufFox-rQoc",
     "category": "music",
-    "featured": false,
+    "featured": true,
     "visible": true
   },
   {
-    "_id": "k-iwjSuJ6hY",
-    "title": "Mendi Jerufi & Eli Marcus - Chony Milecki",
+    "_id": "SWsXDL-JZW0",
+    "title": "Nimo Kally - Keeping 'em Honest",
     "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=k-iwjSuJ6hY",
+    "youtubeUrl": "https://www.youtube.com/watch?v=SWsXDL-JZW0",
     "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "2G_MmFTNN3A",
-    "title": "Total Entertainment - Jazz Standards",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=2G_MmFTNN3A",
-    "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "l0Eu4UXW1vo",
-    "title": "NOA and THE WOLF - Hold on Me (Live at Vibromonk)",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=l0Eu4UXW1vo",
-    "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "jTFvhY2BxSI",
-    "title": "Rage2025",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=jTFvhY2BxSI",
-    "category": "music",
-    "featured": false,
+    "featured": true,
     "visible": true
   },
   {
@@ -713,29 +416,20 @@ const demoVideoData = [
     "visible": true
   },
   {
-    "_id": "uMc6itY7Yd0",
-    "title": "Total Entertainment - Can't Hurry Love",
+    "_id": "31gcaQ3isZY",
+    "title": "Roy Gurel - Sophia",
     "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=uMc6itY7Yd0",
-    "category": "live",
+    "youtubeUrl": "https://www.youtube.com/watch?v=31gcaQ3isZY",
+    "category": "music",
     "featured": false,
     "visible": true
   },
   {
-    "_id": "vWh3KNrHNbM",
-    "title": "Total Entertainment - 70s 80s 90s",
+    "_id": "k3FAN3E7s_c",
+    "title": "Y&I - L E M",
     "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=vWh3KNrHNbM",
-    "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "QkpO1va4GRs",
-    "title": "Total Entertainment - 70s 80s 90s #2",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=QkpO1va4GRs",
-    "category": "live",
+    "youtubeUrl": "https://www.youtube.com/watch?v=k3FAN3E7s_c",
+    "category": "music",
     "featured": false,
     "visible": true
   },
@@ -749,11 +443,92 @@ const demoVideoData = [
     "visible": true
   },
   {
-    "_id": "I3apxDp27bU",
-    "title": "Reuven Roi Edri - Shir Al Yeled",
+    "_id": "PMVY0tJY5xA",
+    "title": "Keren Botaro - Keep Walking",
     "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=I3apxDp27bU",
+    "youtubeUrl": "https://www.youtube.com/watch?v=PMVY0tJY5xA",
     "category": "music",
+    "featured": false,
+    "visible": true
+  },
+  {
+    "_id": "9Clt1mbR1P4",
+    "title": "Point NYC - Agent",
+    "description": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=9Clt1mbR1P4",
+    "category": "commercial",
+    "featured": true,
+    "visible": true
+  },
+  {
+    "_id": "1NHoKHk2S6s",
+    "title": "HomeBiogas - Tips & Tricks",
+    "description": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=1NHoKHk2S6s",
+    "category": "commercial",
+    "featured": true,
+    "visible": true
+  },
+  {
+    "_id": "IubzXrmrRhw",
+    "title": "ALPHA NYC",
+    "description": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=IubzXrmrRhw",
+    "category": "commercial",
+    "featured": false,
+    "visible": true
+  },
+  {
+    "_id": "4TVobibQgmc",
+    "title": "Osif Gonen",
+    "description": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=4TVobibQgmc",
+    "category": "commercial",
+    "featured": true,
+    "visible": true
+  },
+  {
+    "_id": "nVMpwnxcbMs",
+    "title": "PLACE IL - Thank You",
+    "description": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=nVMpwnxcbMs",
+    "category": "commercial",
+    "featured": false,
+    "visible": true
+  },
+  {
+    "_id": "3dN3TWJxbgs",
+    "title": "Avi Nesher - Script Writing",
+    "description": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=3dN3TWJxbgs",
+    "category": "commercial",
+    "featured": false,
+    "visible": true
+  },
+  {
+    "_id": "2K8KQEcXv4s",
+    "title": "Seasonal Beast - This Is Where (Live at the Hive)",
+    "description": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=2K8KQEcXv4s",
+    "category": "live",
+    "featured": true,
+    "visible": true
+  },
+  {
+    "_id": "nCZcCbAVcC8",
+    "title": "Yula Be'eri & The Extended Family - NOW",
+    "description": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=nCZcCbAVcC8",
+    "category": "live",
+    "featured": true,
+    "visible": true
+  },
+  {
+    "_id": "l0Eu4UXW1vo",
+    "title": "NOA and THE WOLF - Hold on Me (Live at Vibromonk)",
+    "description": "",
+    "youtubeUrl": "https://www.youtube.com/watch?v=l0Eu4UXW1vo",
+    "category": "live",
     "featured": false,
     "visible": true
   },
@@ -767,75 +542,13 @@ const demoVideoData = [
     "visible": true
   },
   {
-    "_id": "tUB8KwEbWaQ",
-    "title": "Yula & The Extended Family - Dot X",
+    "_id": "VMmNzIf_-7k",
+    "title": "Total Entertainment - Motown Soul",
     "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=tUB8KwEbWaQ",
+    "youtubeUrl": "https://www.youtube.com/watch?v=VMmNzIf_-7k",
     "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "s-ROhDNjq_A",
-    "title": "Sharon K - No Junkfood Boys",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=s-ROhDNjq_A",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "JhUvL2iaH7U",
-    "title": "אם הכאב הזה יילך",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=JhUvL2iaH7U",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "s8GyumXoClE",
-    "title": "Kiss Slash Crooked Smile - This Is How I Learned To Lie",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=s8GyumXoClE",
-    "category": "music",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "B8u3XHJvm7U",
-    "title": "NOA and THE WOLF - Roller Coaster (Live)",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=B8u3XHJvm7U",
-    "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "NxEzPvWMlYU",
-    "title": "NOA and THE WOLF - Hold On Me",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=NxEzPvWMlYU",
-    "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "weZoWjo3Bhg",
-    "title": "Niv Kaikov - Lovers on the Sun (Live)",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=weZoWjo3Bhg",
-    "category": "live",
-    "featured": false,
-    "visible": true
-  },
-  {
-    "_id": "D0fvJ1MWSTM",
-    "title": "Erika Lloyd - Turn Around",
-    "description": "",
-    "youtubeUrl": "https://www.youtube.com/watch?v=D0fvJ1MWSTM",
-    "category": "music",
     "featured": false,
     "visible": true
   }
 ];
+
