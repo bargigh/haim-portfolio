@@ -8,6 +8,14 @@ const demoPortfolioData = [
     "description": ""
   },
   {
+    "_id": "99",
+    "image": "assets/images/0002_e2fb81c314.jpg",
+    "title": "",
+    "category": "people",
+    "featured": true,
+    "description": ""
+  },
+  {
     "image": "assets/images/2x3a0406-copy.jpg",
     "title": "",
     "category": "people",
@@ -344,6 +352,7 @@ const demoPortfolioData = [
     "description": ""
   }
 ];
+
 
 
 function useDemoData() {
