@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializePortfolio();
     initializeVideos();
     initializeLightbox();
+    initializeVideoModal();
+    initializeSiteSettings();
 });
 
 // Portfolio Management
@@ -276,9 +278,39 @@ function showDemoVideos() {
 
 function openVideo(youtubeUrl) {
     const videoId = extractYouTubeVideoId(youtubeUrl);
-    if (videoId) {
-        window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
-    }
+    if (!videoId) return;
+
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoIframe');
+
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const iframe = document.getElementById('videoIframe');
+    iframe.src = '';
+    modal?.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function initializeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const closeBtn = document.getElementById('videoModalClose');
+
+    closeBtn?.addEventListener('click', closeVideoModal);
+
+    modal?.addEventListener('click', (e) => {
+        if (e.target === modal) closeVideoModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal?.classList.contains('active')) {
+            closeVideoModal();
+        }
+    });
 }
 
 // Lightbox
@@ -392,6 +424,26 @@ function showErrorState(gridId, message) {
     if (!grid) return;
     
     grid.innerHTML = `<div class="error-message">${message}</div>`;
+}
+
+// Fetch site settings (hero image, etc.) from Sanity
+async function initializeSiteSettings() {
+    try {
+        const query = `*[_type == "siteSettings"][0] { heroImage }`;
+        const url = `https://${SANITY_CONFIG.projectId}.api.sanity.io/v${SANITY_CONFIG.apiVersion}/data/query/${SANITY_CONFIG.dataset}?query=${encodeURIComponent(query)}`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.result?.heroImage) {
+            const heroImgUrl = imageUrlFor(data.result.heroImage, 1920);
+            if (heroImgUrl) {
+                document.querySelector('.hero-background').style.backgroundImage = `url(${heroImgUrl})`;
+            }
+        }
+    } catch (e) {
+        // Falls back to CSS default (portrait-01.jpg)
+        console.warn('Could not load hero image from Sanity:', e);
+    }
 }
 
 // Scroll-based navbar background

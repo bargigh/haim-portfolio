@@ -31,6 +31,15 @@ export default defineType({
       initialValue: 'Photographer & Cinematographer'
     }),
     defineField({
+      name: 'heroImage',
+      title: 'Hero Background Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      description: 'Full-screen background photo shown on the homepage hero section'
+    }),
+    defineField({
       name: 'aboutText',
       title: 'About Text',
       type: 'array',
