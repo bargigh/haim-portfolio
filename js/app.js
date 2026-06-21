@@ -106,9 +106,13 @@ async function initializePortfolio() {
             fetchPortfolioFromSanity(),
             fetchCategoriesFromSanity('photo')
         ]);
-        portfolioData = photos.length > 0 ? photos : (showDemoPortfolio(), []);
-        if (categories.length > 0) renderPhotoFilterButtons(categories);
-        if (portfolioData.length > 0) renderPortfolio();
+        if (photos.length > 0) {
+            portfolioData = photos;
+            if (categories.length > 0) renderPhotoFilterButtons(categories);
+            renderPortfolio();
+        } else {
+            showDemoPortfolio();
+        }
     } catch (error) {
         console.error('Error loading portfolio:', error);
         showErrorState('portfolioGrid', 'Failed to load portfolio');
@@ -210,9 +214,13 @@ async function initializeVideos() {
             fetchVideosFromSanity(),
             fetchCategoriesFromSanity('video')
         ]);
-        videoData = videos.length > 0 ? videos : (showDemoVideos(), []);
-        if (categories.length > 0) renderVideoFilterButtons(categories);
-        if (videoData.length > 0) renderVideos();
+        if (videos.length > 0) {
+            videoData = videos;
+            if (categories.length > 0) renderVideoFilterButtons(categories);
+            renderVideos();
+        } else {
+            showDemoVideos();
+        }
     } catch (error) {
         console.error('Error loading videos:', error);
         showErrorState('videoGrid', 'Failed to load videos');
