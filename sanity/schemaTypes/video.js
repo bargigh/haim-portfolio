@@ -47,17 +47,10 @@ export default defineType({
     defineField({
       name: 'category',
       title: 'Category',
-      type: 'string',
+      type: 'reference',
+      to: [{type: 'category'}],
       options: {
-        list: [
-          {title: 'Commercial', value: 'commercial'},
-          {title: 'Documentary', value: 'documentary'},
-          {title: 'Music Video', value: 'music'},
-          {title: 'Corporate', value: 'corporate'},
-          {title: 'Wedding', value: 'wedding'},
-          {title: 'Event', value: 'event'},
-          {title: 'Other', value: 'other'}
-        ]
+        filter: 'type == "video" || type == "both"'
       }
     }),
     defineField({

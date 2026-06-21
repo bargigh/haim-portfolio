@@ -80,26 +80,34 @@ let currentFilter = 'all';
 
 async function initializePortfolio() {
     try {
-        // For now, show loading state until Sanity is configured
         showLoadingState('portfolioGrid');
-        
-        // This will be replaced with actual Sanity data fetching
-        portfolioData = await fetchPortfolioFromSanity();
-        if (portfolioData.length > 0) {
-            renderPortfolio();
-        } else {
-            showDemoPortfolio();
-        }
+        const [photos, categories] = await Promise.all([
+            fetchPortfolioFromSanity(),
+            fetchCategoriesFromSanity('photo')
+        ]);
+        portfolioData = photos.length > 0 ? photos : (showDemoPortfolio(), []);
+        if (categories.length > 0) renderPhotoFilterButtons(categories);
+        if (portfolioData.length > 0) renderPortfolio();
     } catch (error) {
         console.error('Error loading portfolio:', error);
         showErrorState('portfolioGrid', 'Failed to load portfolio');
     }
+}
 
-    // Setup filter buttons
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(button => {
+function renderPhotoFilterButtons(categories) {
+    const container = document.querySelector('.portfolio-filters');
+    if (!container) return;
+    container.innerHTML = `<button class="filter-btn active" data-filter="all">All</button>`;
+    categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.filter = cat.slug;
+        btn.textContent = cat.title;
+        container.appendChild(btn);
+    });
+    container.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', function() {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             currentFilter = this.dataset.filter;
             renderPortfolio();
@@ -112,7 +120,8 @@ async function fetchPortfolioFromSanity() {
         _id,
         title,
         description,
-        category,
+        credit,
+        "category": category->slug.current,
         image,
         featured
     }`;
@@ -176,28 +185,49 @@ let currentVideoFilter = 'all';
 async function initializeVideos() {
     try {
         showLoadingState('videoGrid');
-        
-        videoData = await fetchVideosFromSanity();
-        if (videoData.length > 0) {
-            renderVideos();
-        } else {
-            showDemoVideos();
-        }
+        const [videos, categories] = await Promise.all([
+            fetchVideosFromSanity(),
+            fetchCategoriesFromSanity('video')
+        ]);
+        videoData = videos.length > 0 ? videos : (showDemoVideos(), []);
+        if (categories.length > 0) renderVideoFilterButtons(categories);
+        if (videoData.length > 0) renderVideos();
     } catch (error) {
         console.error('Error loading videos:', error);
         showErrorState('videoGrid', 'Failed to load videos');
     }
-    
-    // Setup video filter buttons
-    const videoFilterButtons = document.querySelectorAll('.video-filters .filter-btn');
-    videoFilterButtons.forEach(button => {
+}
+
+function renderVideoFilterButtons(categories) {
+    const container = document.querySelector('.video-filters');
+    if (!container) return;
+    container.innerHTML = `<button class="filter-btn active" data-filter="all">All</button>`;
+    categories.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.dataset.filter = cat.slug;
+        btn.textContent = cat.title;
+        container.appendChild(btn);
+    });
+    container.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', function() {
-            videoFilterButtons.forEach(btn => btn.classList.remove('active'));
+            container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             currentVideoFilter = this.dataset.filter;
             renderVideos();
         });
     });
+}
+
+async function fetchCategoriesFromSanity(type) {
+    const query = `*[_type == "category" && (type == "${type}" || type == "both")] | order(order asc) {
+        title,
+        "slug": slug.current
+    }`;
+    const url = `https://${SANITY_CONFIG.projectId}.api.sanity.io/v${SANITY_CONFIG.apiVersion}/data/query/${SANITY_CONFIG.dataset}?query=${encodeURIComponent(query)}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data.result || [];
 }
 
 async function fetchVideosFromSanity() {

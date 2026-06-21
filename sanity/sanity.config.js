@@ -20,6 +20,7 @@ export default defineConfig({
           .items([
             orderableDocumentListDeskItem({type: 'photo', title: 'Photos', S, context}),
             S.documentTypeListItem('video').title('Videos'),
+            S.documentTypeListItem('category').title('Categories'),
             S.documentTypeListItem('siteSettings').title('Site Settings'),
           ])
     }),

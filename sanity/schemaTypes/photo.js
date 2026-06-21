@@ -40,15 +40,10 @@ export default defineType({
     defineField({
       name: 'category',
       title: 'Category',
-      type: 'string',
+      type: 'reference',
+      to: [{type: 'category'}],
       options: {
-        list: [
-          {title: 'Portrait', value: 'portrait'},
-          {title: 'Commercial', value: 'commercial'},
-          {title: 'Events', value: 'events'},
-          {title: 'Studio', value: 'studio'},
-          {title: 'Other', value: 'other'}
-        ]
+        filter: 'type == "photo" || type == "both"'
       },
       validation: Rule => Rule.required()
     }),
