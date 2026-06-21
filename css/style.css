@@ -522,6 +522,33 @@ footer p {
     opacity: 1;
 }
 
+.video-modal-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.video-modal-nav button {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    pointer-events: all;
+    transition: background 0.3s ease;
+}
+
+.video-modal-nav button:hover {
+    background: rgba(255,255,255,0.3);
+}
+
 /* Lightbox */
 .lightbox {
     position: fixed;

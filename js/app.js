@@ -234,13 +234,13 @@ function renderVideos() {
         return;
     }
 
-    filteredData.forEach(video => {
-        const videoItem = createVideoItem(video);
+    filteredData.forEach((video, index) => {
+        const videoItem = createVideoItem(video, index);
         grid.appendChild(videoItem);
     });
 }
 
-function createVideoItem(video) {
+function createVideoItem(video, index) {
     const div = document.createElement('div');
     div.className = 'video-item';
     
@@ -257,7 +257,7 @@ function createVideoItem(video) {
         </div>
     `;
     
-    div.addEventListener('click', () => openVideo(video.youtubeUrl));
+    div.addEventListener('click', () => openVideo(video.youtubeUrl, index));
     return div;
 }
 
@@ -268,14 +268,34 @@ function showDemoVideos() {
     }
 }
 
-function openVideo(youtubeUrl) {
+let currentVideoIndex = 0;
+
+function getFilteredVideos() {
+    return currentVideoFilter === 'all'
+        ? videoData
+        : videoData.filter(item => item.category === currentVideoFilter);
+}
+
+function openVideo(youtubeUrl, index) {
     const videoId = extractYouTubeVideoId(youtubeUrl);
     if (!videoId) return;
+    currentVideoIndex = index ?? 0;
     const modal = document.getElementById('videoModal');
     const iframe = document.getElementById('videoIframe');
     iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+}
+
+function navigateVideo(direction) {
+    const filtered = getFilteredVideos();
+    if (!filtered.length) return;
+    currentVideoIndex = (currentVideoIndex + direction + filtered.length) % filtered.length;
+    const video = filtered[currentVideoIndex];
+    const videoId = extractYouTubeVideoId(video.youtubeUrl);
+    if (!videoId) return;
+    const iframe = document.getElementById('videoIframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
 }
 
 function closeVideoModal() {
@@ -289,10 +309,17 @@ function closeVideoModal() {
 function initializeVideoModal() {
     const modal = document.getElementById('videoModal');
     const closeBtn = document.getElementById('videoModalClose');
+    const prevBtn = document.getElementById('videoPrevBtn');
+    const nextBtn = document.getElementById('videoNextBtn');
     closeBtn?.addEventListener('click', closeVideoModal);
+    prevBtn?.addEventListener('click', () => navigateVideo(-1));
+    nextBtn?.addEventListener('click', () => navigateVideo(1));
     modal?.addEventListener('click', (e) => { if (e.target === modal) closeVideoModal(); });
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal?.classList.contains('active')) closeVideoModal();
+        if (!modal?.classList.contains('active')) return;
+        if (e.key === 'Escape') closeVideoModal();
+        if (e.key === 'ArrowLeft') navigateVideo(-1);
+        if (e.key === 'ArrowRight') navigateVideo(1);
     });
 }
 
