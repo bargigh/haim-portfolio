@@ -7,14 +7,16 @@ const SANITY_CONFIG = {
 };
 
 // Sanity Image URL Builder
-function imageUrlFor(source, width = 800, height = 600) {
+// height is optional — omit it to preserve the image's natural aspect ratio (no cropping)
+function imageUrlFor(source, width = 800, height = null) {
     if (!source || !SANITY_CONFIG.projectId) return '';
     
     const baseUrl = `https://cdn.sanity.io/images/${SANITY_CONFIG.projectId}/${SANITY_CONFIG.dataset}`;
     if (source.asset && source.asset._ref) {
         const ref = source.asset._ref;
         const [id, extension] = ref.replace('image-', '').split('-');
-        return `${baseUrl}/${id}.${extension}?w=${width}&h=${height}&fit=crop&auto=format`;
+        const sizeParams = height ? `&h=${height}&fit=crop` : `&fit=max`;
+        return `${baseUrl}/${id}.${extension}?w=${width}${sizeParams}&auto=format`;
     }
     return '';
 }
@@ -151,7 +153,7 @@ function createPortfolioItem(item, index) {
     div.dataset.index = index;
     
     // Use Sanity URL if available, otherwise use local asset
-    const imageUrl = item.image.startsWith('assets/') ? item.image : imageUrlFor(item.image, 800, 600);
+    const imageUrl = item.image.startsWith('assets/') ? item.image : imageUrlFor(item.image, 800);
     
     div.innerHTML = `
         <img src="${imageUrl}" alt="${item.title}" loading="lazy">
@@ -358,7 +360,7 @@ function updateLightboxContent() {
     
     if (lightboxImage) {
         // Use Sanity URL if available, otherwise use local asset
-        const imageUrl = item.image.startsWith('assets/') ? item.image : imageUrlFor(item.image, 1200, 900);
+        const imageUrl = item.image.startsWith('assets/') ? item.image : imageUrlFor(item.image, 1200);
         lightboxImage.src = imageUrl;
         lightboxImage.alt = item.title;
     }
