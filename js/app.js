@@ -7,16 +7,14 @@ const SANITY_CONFIG = {
 };
 
 // Sanity Image URL Builder
-// height is optional — omit it to preserve the image's natural aspect ratio (no cropping)
-function imageUrlFor(source, width = 800, height = null) {
+function imageUrlFor(source, width = 800, height = 600) {
     if (!source || !SANITY_CONFIG.projectId) return '';
     
     const baseUrl = `https://cdn.sanity.io/images/${SANITY_CONFIG.projectId}/${SANITY_CONFIG.dataset}`;
     if (source.asset && source.asset._ref) {
         const ref = source.asset._ref;
         const [id, extension] = ref.replace('image-', '').split('-');
-        const sizeParams = height ? `&h=${height}&fit=crop` : `&fit=max`;
-        return `${baseUrl}/${id}.${extension}?w=${width}${sizeParams}&auto=format`;
+        return `${baseUrl}/${id}.${extension}?w=${width}&h=${height}&fit=crop&auto=format`;
     }
     return '';
 }
@@ -74,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeVideos();
     initializeLightbox();
     initializeVideoModal();
-    initializeSiteSettings();
 });
 
 // Portfolio Management
@@ -87,11 +84,10 @@ async function initializePortfolio() {
         showLoadingState('portfolioGrid');
         
         // This will be replaced with actual Sanity data fetching
-        if (SANITY_CONFIG.projectId !== 'YOUR_PROJECT_ID') {
-            portfolioData = await fetchPortfolioFromSanity();
+        portfolioData = await fetchPortfolioFromSanity();
+        if (portfolioData.length > 0) {
             renderPortfolio();
         } else {
-            // Show demo content for now
             showDemoPortfolio();
         }
     } catch (error) {
@@ -155,16 +151,11 @@ function createPortfolioItem(item, index) {
     div.dataset.index = index;
     
     // Use Sanity URL if available, otherwise use local asset
-    const imageUrl = item.image.startsWith('assets/') ? item.image : imageUrlFor(item.image, 800);
+    const imageUrl = item.image.startsWith('assets/') ? item.image : imageUrlFor(item.image, 800, 600);
     
     div.innerHTML = `
-        <img src="${imageUrl}" alt="${item.title}" loading="lazy">
-        <div class="portfolio-overlay">
-            <div class="portfolio-info">
-                <h3>${item.title}</h3>
-                <p>${item.description || ''}</p>
-            </div>
-        </div>
+        <img src="${imageUrl}" alt="" loading="lazy">
+        <div class="portfolio-overlay"></div>
     `;
     
     div.addEventListener('click', () => openLightbox(index));
@@ -186,8 +177,8 @@ async function initializeVideos() {
     try {
         showLoadingState('videoGrid');
         
-        if (SANITY_CONFIG.projectId !== 'xotjnbwo') {
-            videoData = await fetchVideosFromSanity();
+        videoData = await fetchVideosFromSanity();
+        if (videoData.length > 0) {
             renderVideos();
         } else {
             showDemoVideos();
@@ -210,13 +201,15 @@ async function initializeVideos() {
 }
 
 async function fetchVideosFromSanity() {
-    const query = `*[_type == "video"] | order(orderRank) {
+    const query = `*[_type == "video" && visible == true] | order(order asc) {
         _id,
         title,
         description,
         youtubeUrl,
         customThumbnail,
-        featured
+        featured,
+        "category": category->slug.current,
+        visible
     }`;
     
     const url = `https://${SANITY_CONFIG.projectId}.api.sanity.io/v${SANITY_CONFIG.apiVersion}/data/query/${SANITY_CONFIG.dataset}?query=${encodeURIComponent(query)}`;
@@ -269,9 +262,8 @@ function createVideoItem(video) {
 }
 
 function showDemoVideos() {
-    // Use actual demo data with your videos
-    if (typeof useDemoData === 'function') {
-        // Demo data is already loaded, just render
+    if (typeof demoVideoData !== 'undefined') {
+        videoData = demoVideoData;
         renderVideos();
     }
 }
@@ -279,10 +271,8 @@ function showDemoVideos() {
 function openVideo(youtubeUrl) {
     const videoId = extractYouTubeVideoId(youtubeUrl);
     if (!videoId) return;
-
     const modal = document.getElementById('videoModal');
     const iframe = document.getElementById('videoIframe');
-
     iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -299,17 +289,10 @@ function closeVideoModal() {
 function initializeVideoModal() {
     const modal = document.getElementById('videoModal');
     const closeBtn = document.getElementById('videoModalClose');
-
     closeBtn?.addEventListener('click', closeVideoModal);
-
-    modal?.addEventListener('click', (e) => {
-        if (e.target === modal) closeVideoModal();
-    });
-
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeVideoModal(); });
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal?.classList.contains('active')) {
-            closeVideoModal();
-        }
+        if (e.key === 'Escape' && modal?.classList.contains('active')) closeVideoModal();
     });
 }
 
@@ -336,11 +319,20 @@ function initializeLightbox() {
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (!lightbox?.classList.contains('active')) return;
-        
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') navigateLightbox(-1);
         if (e.key === 'ArrowRight') navigateLightbox(1);
     });
+
+    // Touch / swipe navigation
+    let touchStartX = 0;
+    lightbox?.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    }, {passive: true});
+    lightbox?.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) navigateLightbox(diff > 0 ? 1 : -1);
+    }, {passive: true});
 }
 
 function openLightbox(index) {
@@ -392,12 +384,12 @@ function updateLightboxContent() {
     
     if (lightboxImage) {
         // Use Sanity URL if available, otherwise use local asset
-        const imageUrl = item.image.startsWith('assets/') ? item.image : imageUrlFor(item.image, 1200);
+        const imageUrl = item.image.startsWith('assets/') ? item.image : imageUrlFor(item.image, 1200, 900);
         lightboxImage.src = imageUrl;
         lightboxImage.alt = item.title;
     }
     
-    if (lightboxTitle) lightboxTitle.textContent = item.title;
+    if (lightboxTitle) lightboxTitle.textContent = '';
     if (lightboxDescription) lightboxDescription.textContent = item.description || '';
 }
 
@@ -426,26 +418,6 @@ function showErrorState(gridId, message) {
     grid.innerHTML = `<div class="error-message">${message}</div>`;
 }
 
-// Fetch site settings (hero image, etc.) from Sanity
-async function initializeSiteSettings() {
-    try {
-        const query = `*[_type == "siteSettings"][0] { heroImage }`;
-        const url = `https://${SANITY_CONFIG.projectId}.api.sanity.io/v${SANITY_CONFIG.apiVersion}/data/query/${SANITY_CONFIG.dataset}?query=${encodeURIComponent(query)}`;
-        const response = await fetch(url);
-        const data = await response.json();
-
-        if (data.result?.heroImage) {
-            const heroImgUrl = imageUrlFor(data.result.heroImage, 1920);
-            if (heroImgUrl) {
-                document.querySelector('.hero-background').style.backgroundImage = `url(${heroImgUrl})`;
-            }
-        }
-    } catch (e) {
-        // Falls back to CSS default (portrait-01.jpg)
-        console.warn('Could not load hero image from Sanity:', e);
-    }
-}
-
 // Scroll-based navbar background
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
@@ -455,3 +427,30 @@ window.addEventListener('scroll', function() {
         navbar.style.background = 'rgba(10, 10, 10, 0.95)';
     }
 });
+// Hidden events gallery — activated via ?events URL param
+(function() {
+    if (window.location.search.includes('events')) {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show events heading
+            const section = document.getElementById('portfolio');
+            if (section) {
+                const title = section.querySelector('.section-title');
+                if (title) title.textContent = 'Events Portfolio';
+            }
+            // Force events filter
+            currentFilter = 'events';
+            // Add visible events button
+            const filters = document.querySelector('.portfolio-filters');
+            if (filters) {
+                filters.style.display = 'none'; // hide filter bar entirely for clean look
+            }
+            // Re-render after data loads
+            const orig = window.useDemoData;
+            window.useDemoData = function() {
+                portfolioData = demoPortfolioData;
+                currentFilter = 'events';
+                renderPortfolio();
+            };
+        });
+    }
+})();
