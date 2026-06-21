@@ -72,7 +72,28 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeVideos();
     initializeLightbox();
     initializeVideoModal();
+    initializeSiteSettings();
 });
+
+async function initializeSiteSettings() {
+    try {
+        const query = `*[_type == "siteSettings"][0] { heroImage, aboutImage }`;
+        const url = `https://${SANITY_CONFIG.projectId}.api.sanity.io/v${SANITY_CONFIG.apiVersion}/data/query/${SANITY_CONFIG.dataset}?query=${encodeURIComponent(query)}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        if (data.result?.heroImage) {
+            const heroUrl = imageUrlFor(data.result.heroImage, 1920);
+            if (heroUrl) document.querySelector('.hero-background').style.backgroundImage = `url(${heroUrl})`;
+        }
+        if (data.result?.aboutImage) {
+            const aboutUrl = imageUrlFor(data.result.aboutImage, 800);
+            const el = document.getElementById('aboutImage');
+            if (aboutUrl && el) el.src = aboutUrl;
+        }
+    } catch(e) {
+        console.warn('Could not load site settings:', e);
+    }
+}
 
 // Portfolio Management
 let portfolioData = [];
