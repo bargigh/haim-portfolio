@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 
 export default defineType({
   name: 'photo',
@@ -52,17 +53,18 @@ export default defineType({
       validation: Rule => Rule.required()
     }),
     defineField({
+      name: 'credit',
+      title: 'Credit',
+      type: 'string',
+      description: 'Photo credit or copyright (e.g. © Haim Bargig)'
+    }),
+    defineField({
       name: 'featured',
       title: 'Featured',
       type: 'boolean',
       description: 'Display in featured gallery'
     }),
-    defineField({
-      name: 'orderRank',
-      title: 'Order',
-      type: 'string',
-      hidden: true,
-    }),
+    orderRankField({type: 'photo'}),
   ],
   preview: {
     select: {
@@ -79,20 +81,5 @@ export default defineType({
       }
     }
   },
-  orderings: [
-    {
-      title: 'Manual order',
-      name: 'manualOrder',
-      by: [
-        {field: 'orderRank', direction: 'asc'}
-      ]
-    },
-    {
-      title: 'Title A-Z',
-      name: 'titleAsc',
-      by: [
-        {field: 'title', direction: 'asc'}
-      ]
-    }
-  ]
+  orderings: [orderRankOrdering]
 })

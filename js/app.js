@@ -417,7 +417,10 @@ function updateLightboxContent() {
     }
     
     if (lightboxTitle) lightboxTitle.textContent = '';
-    if (lightboxDescription) lightboxDescription.textContent = item.description || '';
+    if (lightboxDescription) {
+        const credit = item.credit ? `© ${item.credit}` : '';
+        lightboxDescription.textContent = [item.description, credit].filter(Boolean).join('  ·  ');
+    }
 }
 
 // Utility Functions
