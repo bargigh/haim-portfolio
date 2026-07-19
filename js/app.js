@@ -51,11 +51,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling
+    // Smooth scrolling (only for same-page anchor links)
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
+            if (!targetId || !targetId.startsWith('#')) return; // let normal page links navigate
+            e.preventDefault();
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {

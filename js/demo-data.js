@@ -2114,7 +2114,7 @@ const demoVideoData = [
 const demoPhotoCategories = [
     { title: 'Photos', slug: 'photos' },
     { title: 'Portraits', slug: 'portraits' },
-    { title: 'Landscapes', slug: 'abstruct-landscapes' },
+    { title: 'Personal Work', slug: 'abstruct-landscapes' },
     { title: 'Nudes', slug: 'nudes' }
 ];
 

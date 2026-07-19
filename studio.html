@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haim's Studio הסטודיו של חיים — Haim Bargig</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1><a href="index.html" style="color:inherit;text-decoration:none;">Haim Bargig</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#videos">Videos</a></li>
+                <li><a href="studio.html" class="active">Studio</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Studio Section -->
+        <section id="studio" class="studio studio-page" dir="rtl" lang="he">
+            <div class="container">
+                <h2 class="section-title">Haim's Studio הסטודיו של חיים</h2>
+                <p class="studio-intro">סטודיו לצילום והפקה, בקריית המלאכה בת״א.</p>
+                <div class="studio-grid" id="studioGrid"></div>
+                <div class="studio-details">
+                    <div class="studio-card">
+                        <h3>החלל</h3>
+                        <ul>
+                            <li>גודל 65 מ״ר — סייקלורמה / קיר לימבו ענק ב־2 זוויות, 10 מטר (6 מ׳ + 4 מ׳ צד), גובה 3.25 מ׳</li>
+                            <li>מתקן רקעים עם מגוון רקעים משתנה, אפשרות לצילום על מסך ירוק</li>
+                            <li>ריג תאורה מלא מהתקרה כולל שקעים, תלת־פאזי, דימרים ולוח בקרה</li>
+                            <li>חדר איפור והלבשה, עמדת עריכה + אינטרנט מהיר, מטבחון ופינת אירוח</li>
+                            <li>קומה שלישית — מעלית, מזגן, נגיש לנכים, Wi-Fi</li>
+                        </ul>
+                    </div>
+                    <div class="studio-card">
+                        <h3>ציוד</h3>
+                        <ul>
+                            <li><strong>תאורה:</strong> Aputure 1200D / LS 300D II, Litepanels Astra, LiteMat, Profoto B10 Plus, Elinchrom ועוד</li>
+                            <li><strong>מרככים:</strong> Profoto Beauty Dish &amp; Octa, Chimera, Aputure Light Dome II</li>
+                            <li><strong>מצלמות ועדשות:</strong> Canon C200 / R5 / 5D III, Mamiya 645AF, סדרת עדשות L</li>
+                            <li><strong>סאונד:</strong> Zoom F4, Sennheiser G3, Audio-Technica, Sony</li>
+                            <li><strong>גריפ ועוד:</strong> טלפרומפטר, מכונת עשן וערפל, דנה דולי, חצובות וציוד גריפ</li>
+                        </ul>
+                    </div>
+                    <div class="studio-card">
+                        <h3>מחירון</h3>
+                        <ul>
+                            <li>מחיר לפי שעה: <strong>₪180</strong> (מינימום 3 שעות) — כולל ציוד תאורה וגריפ בסיסי</li>
+                            <li>חצי יום צילום (עד 5 שעות): <strong>₪800</strong></li>
+                            <li>יום צילום מלא (10 שעות): <strong>₪1500</strong></li>
+                            <li>מפעיל טלפרומפטר / אסיסטנט: <strong>₪100</strong> לשעה</li>
+                            <li>המחירים אינם כוללים מע״מ</li>
+                        </ul>
+                        <p class="studio-fit">מתאים לסטילס ווידאו, פרסומות, הפקות אופנה, תדמית, ראיונות, פורטרטים, קליפים, פודקאסטים ושידורי לייב.</p>
+                        <a href="index.html#contact" class="btn btn-primary">לתיאום והזמנה</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Haim Bargig. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="">
+        </div>
+        <div class="lightbox-nav">
+            <button id="prevBtn">&larr;</button>
+            <button id="nextBtn">&rarr;</button>
+        </div>
+    </div>
+
+    <script src="js/demo-data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
