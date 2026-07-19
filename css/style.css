@@ -704,3 +704,59 @@ footer p {
         padding: 60px 0;
     }
 }
+/* ── Studio Section ─────────────────────────────────────── */
+.studio {
+    padding: 100px 0;
+    background: #0d0d0d;
+}
+.studio .section-title { margin-bottom: 16px; }
+.studio-intro {
+    text-align: center;
+    color: #bbb;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.05rem;
+}
+.studio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    margin-bottom: 48px;
+}
+.studio-item {
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 3 / 2;
+    background: #161616;
+}
+.studio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+.studio-item:hover img { transform: scale(1.04); }
+.studio-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+.studio-card {
+    background: #161616;
+    padding: 28px;
+    border: 1px solid #222;
+}
+.studio-card h3 {
+    margin: 0 0 14px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+.studio-card ul {
+    margin: 0;
+    padding-inline-start: 18px;
+    color: #ccc;
+    line-height: 1.8;
+    font-size: .95rem;
+}
+.studio-card .btn { margin-top: 18px; display: inline-block; }
+.studio-fit { color: #999; font-size: .9rem; margin-top: 14px; }

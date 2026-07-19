@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize portfolio
     initializePortfolio();
     initializeVideos();
+    initializeStudio();
     initializeLightbox();
     initializeVideoModal();
     initializeSiteSettings();
@@ -93,6 +94,31 @@ async function initializeSiteSettings() {
     } catch(e) {
         console.warn('Could not load site settings:', e);
     }
+}
+
+// Studio gallery (separate service section, not part of the portfolio)
+function initializeStudio() {
+    const grid = document.getElementById('studioGrid');
+    if (!grid || typeof studioImages === 'undefined') return;
+    studioImages.forEach((src, i) => {
+        const div = document.createElement('div');
+        div.className = 'studio-item';
+        div.innerHTML = `<img src="${src}" alt="Haim's Studio ${i + 1}" loading="lazy">`;
+        div.addEventListener('click', () => openStudioLightbox(i));
+        grid.appendChild(div);
+    });
+}
+
+let studioLightboxIndex = 0;
+function openStudioLightbox(i) {
+    if (typeof studioImages === 'undefined') return;
+    studioLightboxIndex = i;
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImage');
+    img.src = studioImages[i];
+    lightbox?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    lightbox.dataset.mode = 'studio';
 }
 
 // Portfolio Management
@@ -288,7 +314,7 @@ function createVideoItem(video, index) {
         : getYouTubeThumbnail(video.youtubeUrl);
     
     div.innerHTML = `
-        <img src="${thumbnailUrl}" alt="${video.title}" class="video-thumbnail" loading="lazy">
+        <img src="${thumbnailUrl}" alt="${video.title}" class="video-thumbnail" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault');">
         <div class="play-button"></div>
         <div class="video-info">
             <h3>${video.title}</h3>
@@ -415,11 +441,18 @@ function openLightbox(index) {
 
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
+    if (lightbox) delete lightbox.dataset.mode;
     lightbox?.classList.remove('active');
     document.body.style.overflow = '';
 }
 
 function navigateLightbox(direction) {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox?.dataset.mode === 'studio' && typeof studioImages !== 'undefined') {
+        studioLightboxIndex = (studioLightboxIndex + direction + studioImages.length) % studioImages.length;
+        document.getElementById('lightboxImage').src = studioImages[studioLightboxIndex];
+        return;
+    }
     const filteredData = currentFilter === 'all' 
         ? portfolioData 
         : portfolioData.filter(item => item.category === currentFilter);

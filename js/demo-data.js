@@ -1787,70 +1787,6 @@ const demoPortfolioData = [
         "featured": false
     },
     {
-        "_id": "w224",
-        "title": "",
-        "description": "",
-        "category": "studio",
-        "image": "assets/wix/studio/001.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w225",
-        "title": "",
-        "description": "",
-        "category": "studio",
-        "image": "assets/wix/studio/002.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w226",
-        "title": "",
-        "description": "",
-        "category": "studio",
-        "image": "assets/wix/studio/003.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w227",
-        "title": "",
-        "description": "",
-        "category": "studio",
-        "image": "assets/wix/studio/004.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w228",
-        "title": "",
-        "description": "",
-        "category": "studio",
-        "image": "assets/wix/studio/005.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w229",
-        "title": "",
-        "description": "",
-        "category": "studio",
-        "image": "assets/wix/studio/006.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w230",
-        "title": "",
-        "description": "",
-        "category": "studio",
-        "image": "assets/wix/studio/007.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w231",
-        "title": "",
-        "description": "",
-        "category": "studio",
-        "image": "assets/wix/studio/008.jpg",
-        "featured": false
-    },
-    {
         "_id": "x232",
         "title": "",
         "description": "",
@@ -2179,7 +2115,6 @@ const demoPhotoCategories = [
     { title: 'Photos', slug: 'photos' },
     { title: 'Portraits', slug: 'portraits' },
     { title: 'Landscapes', slug: 'abstruct-landscapes' },
-    { title: 'Studio', slug: 'studio' },
     { title: 'Nudes', slug: 'nudes' }
 ];
 
@@ -2195,3 +2130,14 @@ function useDemoData() {
     renderPhotoFilterButtons(demoPhotoCategories);
     renderPortfolio();
 }
+
+const studioImages = [
+    "assets/wix/studio/001.jpg",
+    "assets/wix/studio/002.jpg",
+    "assets/wix/studio/003.jpg",
+    "assets/wix/studio/004.jpg",
+    "assets/wix/studio/005.jpg",
+    "assets/wix/studio/006.jpg",
+    "assets/wix/studio/007.jpg",
+    "assets/wix/studio/008.jpg"
+];
