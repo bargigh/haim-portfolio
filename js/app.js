@@ -100,19 +100,9 @@ let portfolioData = [];
 let currentFilter = 'all';
 
 async function initializePortfolio() {
+    // Static data is the source of truth (mirrored from the original Wix site, order preserved).
     try {
-        showLoadingState('portfolioGrid');
-        const [photos, categories] = await Promise.all([
-            fetchPortfolioFromSanity(),
-            fetchCategoriesFromSanity('photo')
-        ]);
-        if (photos.length > 0) {
-            portfolioData = photos;
-            if (categories.length > 0) renderPhotoFilterButtons(categories);
-            renderPortfolio();
-        } else {
-            showDemoPortfolio();
-        }
+        showDemoPortfolio();
     } catch (error) {
         console.error('Error loading portfolio:', error);
         showErrorState('portfolioGrid', 'Failed to load portfolio');
@@ -208,19 +198,9 @@ let videoData = [];
 let currentVideoFilter = 'all';
 
 async function initializeVideos() {
+    // Static data is the source of truth (mirrored from the original Wix site, order preserved).
     try {
-        showLoadingState('videoGrid');
-        const [videos, categories] = await Promise.all([
-            fetchVideosFromSanity(),
-            fetchCategoriesFromSanity('video')
-        ]);
-        if (videos.length > 0) {
-            videoData = videos;
-            if (categories.length > 0) renderVideoFilterButtons(categories);
-            renderVideos();
-        } else {
-            showDemoVideos();
-        }
+        showDemoVideos();
     } catch (error) {
         console.error('Error loading videos:', error);
         showErrorState('videoGrid', 'Failed to load videos');
@@ -323,6 +303,7 @@ function createVideoItem(video, index) {
 function showDemoVideos() {
     if (typeof demoVideoData !== 'undefined') {
         videoData = demoVideoData;
+        if (typeof demoVideoCategories !== 'undefined') renderVideoFilterButtons(demoVideoCategories);
         renderVideos();
     }
 }
