@@ -61,10 +61,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const nav = document.querySelector('.navbar');
+                const off = (nav ? nav.offsetHeight : 0) + 8;
+                const go = () => window.scrollTo({
+                    top: targetSection.getBoundingClientRect().top + window.pageYOffset - off,
+                    behavior: 'smooth'
                 });
+                go();
+                // re-correct after lazy images above settle layout
+                setTimeout(go, 600);
             }
         });
     });
@@ -393,9 +398,7 @@ function renderVideos() {
     const grid = document.getElementById('videoGrid');
     if (!grid) return;
 
-    const filteredData = currentVideoFilter === 'all' 
-        ? videoData 
-        : videoData.filter(item => item.category === currentVideoFilter);
+    const filteredData = getFilteredVideos();
 
     grid.innerHTML = '';
     
@@ -442,9 +445,11 @@ function showDemoVideos() {
 let currentVideoIndex = 0;
 
 function getFilteredVideos() {
-    return currentVideoFilter === 'all'
-        ? videoData
+    const showreel = videoData.filter(item => item.category === 'showreel');
+    const rest = currentVideoFilter === 'all'
+        ? videoData.filter(item => item.category !== 'showreel')
         : videoData.filter(item => item.category === currentVideoFilter);
+    return showreel.concat(rest);
 }
 
 function openVideo(youtubeUrl, index) {

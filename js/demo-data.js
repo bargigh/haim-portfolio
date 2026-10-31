@@ -1192,7 +1192,7 @@ const demoVideoData = [
         "_id": "v1",
         "title": "Haim Bargig - Director of Photography / Camera Operator Showreel 2024 חיים ברגיג שואריל",
         "description": "",
-        "category": "videos",
+        "category": "showreel",
         "youtubeUrl": "https://www.youtube.com/watch?v=lFmQFlIdyr4",
         "featured": true
     },
@@ -1208,7 +1208,7 @@ const demoVideoData = [
         "_id": "v3",
         "title": "Jorny 2024",
         "description": "",
-        "category": "videos",
+        "category": "broadcast",
         "youtubeUrl": "https://www.youtube.com/watch?v=kakO_AU1f10",
         "featured": true
     },
@@ -1216,7 +1216,7 @@ const demoVideoData = [
         "_id": "v4",
         "title": "MiNiT - Right on Time",
         "description": "",
-        "category": "videos",
+        "category": "broadcast",
         "youtubeUrl": "https://www.youtube.com/watch?v=f8OGfoKVB-g",
         "featured": false
     },
@@ -1224,7 +1224,7 @@ const demoVideoData = [
         "_id": "v5",
         "title": "משפחת ישראל  \\ Mishpachat (The Family) Of Israel  - וידאו ארט | Video art",
         "description": "",
-        "category": "videos",
+        "category": "broadcast",
         "youtubeUrl": "https://www.youtube.com/watch?v=ElEdDlTmh1A",
         "featured": false
     },
@@ -1381,7 +1381,6 @@ const demoPhotoCategories = [
 ];
 
 const demoVideoCategories = [
-    { title: 'Videos', slug: 'videos' },
     { title: 'Broadcast & Digital', slug: 'broadcast' },
     { title: 'Documentaries', slug: 'documentary' },
     { title: 'Music Videos', slug: 'music' }
