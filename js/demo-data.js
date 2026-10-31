@@ -6,7 +6,7 @@ const demoPortfolioData = [
         "_id": "w1",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/001.jpg",
         "featured": true
     },
@@ -14,7 +14,7 @@ const demoPortfolioData = [
         "_id": "w2",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/002.jpg",
         "featured": true
     },
@@ -22,7 +22,7 @@ const demoPortfolioData = [
         "_id": "w3",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/003.jpg",
         "featured": true
     },
@@ -30,7 +30,7 @@ const demoPortfolioData = [
         "_id": "w4",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/004.jpg",
         "featured": true
     },
@@ -38,7 +38,7 @@ const demoPortfolioData = [
         "_id": "w5",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/005.jpg",
         "featured": false
     },
@@ -46,7 +46,7 @@ const demoPortfolioData = [
         "_id": "w6",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/006.jpg",
         "featured": false
     },
@@ -54,7 +54,7 @@ const demoPortfolioData = [
         "_id": "w7",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/007.jpg",
         "featured": false
     },
@@ -62,7 +62,7 @@ const demoPortfolioData = [
         "_id": "w8",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/008.jpg",
         "featured": false
     },
@@ -70,7 +70,7 @@ const demoPortfolioData = [
         "_id": "w9",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/009.jpg",
         "featured": false
     },
@@ -78,7 +78,7 @@ const demoPortfolioData = [
         "_id": "w10",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/010.jpg",
         "featured": false
     },
@@ -86,7 +86,7 @@ const demoPortfolioData = [
         "_id": "w11",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/011.jpg",
         "featured": false
     },
@@ -94,7 +94,7 @@ const demoPortfolioData = [
         "_id": "w12",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/012.jpg",
         "featured": false
     },
@@ -102,7 +102,7 @@ const demoPortfolioData = [
         "_id": "w13",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/013.jpg",
         "featured": false
     },
@@ -110,7 +110,7 @@ const demoPortfolioData = [
         "_id": "w14",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/014.jpg",
         "featured": false
     },
@@ -118,7 +118,7 @@ const demoPortfolioData = [
         "_id": "w15",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/015.jpg",
         "featured": false
     },
@@ -126,7 +126,7 @@ const demoPortfolioData = [
         "_id": "w16",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/016.jpg",
         "featured": false
     },
@@ -134,7 +134,7 @@ const demoPortfolioData = [
         "_id": "w17",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/017.jpg",
         "featured": false
     },
@@ -142,7 +142,7 @@ const demoPortfolioData = [
         "_id": "w18",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/018.jpg",
         "featured": false
     },
@@ -150,7 +150,7 @@ const demoPortfolioData = [
         "_id": "w19",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/019.jpg",
         "featured": false
     },
@@ -158,7 +158,7 @@ const demoPortfolioData = [
         "_id": "w20",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/020.jpg",
         "featured": false
     },
@@ -166,7 +166,7 @@ const demoPortfolioData = [
         "_id": "w21",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/021.jpg",
         "featured": false
     },
@@ -174,7 +174,7 @@ const demoPortfolioData = [
         "_id": "w22",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/022.jpg",
         "featured": false
     },
@@ -182,7 +182,7 @@ const demoPortfolioData = [
         "_id": "w23",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/023.jpg",
         "featured": false
     },
@@ -190,7 +190,7 @@ const demoPortfolioData = [
         "_id": "w24",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/024.jpg",
         "featured": false
     },
@@ -198,7 +198,7 @@ const demoPortfolioData = [
         "_id": "w25",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/025.jpg",
         "featured": false
     },
@@ -206,7 +206,7 @@ const demoPortfolioData = [
         "_id": "w26",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/026.jpg",
         "featured": false
     },
@@ -214,7 +214,7 @@ const demoPortfolioData = [
         "_id": "w27",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/027.jpg",
         "featured": false
     },
@@ -222,7 +222,7 @@ const demoPortfolioData = [
         "_id": "w28",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/028.jpg",
         "featured": false
     },
@@ -230,7 +230,7 @@ const demoPortfolioData = [
         "_id": "w29",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/029.jpg",
         "featured": false
     },
@@ -238,7 +238,7 @@ const demoPortfolioData = [
         "_id": "w30",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/030.jpg",
         "featured": false
     },
@@ -246,7 +246,7 @@ const demoPortfolioData = [
         "_id": "w31",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/031.jpg",
         "featured": false
     },
@@ -254,7 +254,7 @@ const demoPortfolioData = [
         "_id": "w32",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/032.jpg",
         "featured": false
     },
@@ -262,7 +262,7 @@ const demoPortfolioData = [
         "_id": "w33",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/033.jpg",
         "featured": false
     },
@@ -270,7 +270,7 @@ const demoPortfolioData = [
         "_id": "w34",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/034.jpg",
         "featured": false
     },
@@ -278,7 +278,7 @@ const demoPortfolioData = [
         "_id": "w35",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/035.jpg",
         "featured": false
     },
@@ -286,7 +286,7 @@ const demoPortfolioData = [
         "_id": "w36",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/036.jpg",
         "featured": false
     },
@@ -294,7 +294,7 @@ const demoPortfolioData = [
         "_id": "w37",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/037.jpg",
         "featured": false
     },
@@ -302,7 +302,7 @@ const demoPortfolioData = [
         "_id": "w38",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/038.jpg",
         "featured": false
     },
@@ -310,7 +310,7 @@ const demoPortfolioData = [
         "_id": "w39",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/039.jpg",
         "featured": false
     },
@@ -318,7 +318,7 @@ const demoPortfolioData = [
         "_id": "w40",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/040.jpg",
         "featured": false
     },
@@ -326,7 +326,7 @@ const demoPortfolioData = [
         "_id": "w41",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/041.jpg",
         "featured": false
     },
@@ -334,7 +334,7 @@ const demoPortfolioData = [
         "_id": "w42",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/042.jpg",
         "featured": false
     },
@@ -342,7 +342,7 @@ const demoPortfolioData = [
         "_id": "w43",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/043.jpg",
         "featured": false
     },
@@ -350,7 +350,7 @@ const demoPortfolioData = [
         "_id": "w44",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/044.jpg",
         "featured": false
     },
@@ -358,7 +358,7 @@ const demoPortfolioData = [
         "_id": "w45",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/045.jpg",
         "featured": false
     },
@@ -366,7 +366,7 @@ const demoPortfolioData = [
         "_id": "w46",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/046.jpg",
         "featured": false
     },
@@ -374,7 +374,7 @@ const demoPortfolioData = [
         "_id": "w47",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/047.jpg",
         "featured": false
     },
@@ -382,7 +382,7 @@ const demoPortfolioData = [
         "_id": "w48",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/048.jpg",
         "featured": false
     },
@@ -390,7 +390,7 @@ const demoPortfolioData = [
         "_id": "w49",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/049.jpg",
         "featured": false
     },
@@ -398,7 +398,7 @@ const demoPortfolioData = [
         "_id": "w50",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/050.jpg",
         "featured": false
     },
@@ -406,7 +406,7 @@ const demoPortfolioData = [
         "_id": "w51",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/051.jpg",
         "featured": false
     },
@@ -414,7 +414,7 @@ const demoPortfolioData = [
         "_id": "w52",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/052.jpg",
         "featured": false
     },
@@ -422,7 +422,7 @@ const demoPortfolioData = [
         "_id": "w53",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/053.jpg",
         "featured": false
     },
@@ -430,7 +430,7 @@ const demoPortfolioData = [
         "_id": "w54",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/054.jpg",
         "featured": false
     },
@@ -438,7 +438,7 @@ const demoPortfolioData = [
         "_id": "w55",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/055.jpg",
         "featured": false
     },
@@ -446,7 +446,7 @@ const demoPortfolioData = [
         "_id": "w56",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/056.jpg",
         "featured": false
     },
@@ -454,7 +454,7 @@ const demoPortfolioData = [
         "_id": "w57",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/057.jpg",
         "featured": false
     },
@@ -462,7 +462,7 @@ const demoPortfolioData = [
         "_id": "w58",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/058.jpg",
         "featured": false
     },
@@ -470,7 +470,7 @@ const demoPortfolioData = [
         "_id": "w59",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/059.jpg",
         "featured": false
     },
@@ -478,7 +478,7 @@ const demoPortfolioData = [
         "_id": "w60",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/060.jpg",
         "featured": false
     },
@@ -486,7 +486,7 @@ const demoPortfolioData = [
         "_id": "w61",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/061.jpg",
         "featured": false
     },
@@ -494,7 +494,7 @@ const demoPortfolioData = [
         "_id": "w62",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/062.jpg",
         "featured": false
     },
@@ -502,7 +502,7 @@ const demoPortfolioData = [
         "_id": "w63",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/063.jpg",
         "featured": false
     },
@@ -510,7 +510,7 @@ const demoPortfolioData = [
         "_id": "w64",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/064.jpg",
         "featured": false
     },
@@ -518,7 +518,7 @@ const demoPortfolioData = [
         "_id": "w65",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/065.jpg",
         "featured": false
     },
@@ -526,7 +526,7 @@ const demoPortfolioData = [
         "_id": "w66",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/066.jpg",
         "featured": false
     },
@@ -534,7 +534,7 @@ const demoPortfolioData = [
         "_id": "w67",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/067.jpg",
         "featured": false
     },
@@ -542,7 +542,7 @@ const demoPortfolioData = [
         "_id": "w68",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/068.jpg",
         "featured": false
     },
@@ -550,7 +550,7 @@ const demoPortfolioData = [
         "_id": "w69",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/wix/photos/069.jpg",
         "featured": false
     },
@@ -558,7 +558,7 @@ const demoPortfolioData = [
         "_id": "w70",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/070.jpg",
         "featured": false
     },
@@ -566,7 +566,7 @@ const demoPortfolioData = [
         "_id": "w71",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/071.jpg",
         "featured": false
     },
@@ -574,7 +574,7 @@ const demoPortfolioData = [
         "_id": "w72",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/072.jpg",
         "featured": false
     },
@@ -582,7 +582,7 @@ const demoPortfolioData = [
         "_id": "w73",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/073.jpg",
         "featured": false
     },
@@ -590,7 +590,7 @@ const demoPortfolioData = [
         "_id": "w74",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/074.jpg",
         "featured": false
     },
@@ -598,7 +598,7 @@ const demoPortfolioData = [
         "_id": "w75",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/075.jpg",
         "featured": false
     },
@@ -606,7 +606,7 @@ const demoPortfolioData = [
         "_id": "w76",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/076.jpg",
         "featured": false
     },
@@ -614,7 +614,7 @@ const demoPortfolioData = [
         "_id": "w77",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/077.jpg",
         "featured": false
     },
@@ -622,7 +622,7 @@ const demoPortfolioData = [
         "_id": "w78",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "nudes",
         "image": "assets/wix/photos/078.jpg",
         "featured": false
     },
@@ -630,7 +630,7 @@ const demoPortfolioData = [
         "_id": "w79",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/079.jpg",
         "featured": false
     },
@@ -638,7 +638,7 @@ const demoPortfolioData = [
         "_id": "w80",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/080.jpg",
         "featured": false
     },
@@ -646,7 +646,7 @@ const demoPortfolioData = [
         "_id": "w81",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/081.jpg",
         "featured": false
     },
@@ -654,7 +654,7 @@ const demoPortfolioData = [
         "_id": "w82",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/082.jpg",
         "featured": false
     },
@@ -662,7 +662,7 @@ const demoPortfolioData = [
         "_id": "w83",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/083.jpg",
         "featured": false
     },
@@ -670,7 +670,7 @@ const demoPortfolioData = [
         "_id": "w84",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/084.jpg",
         "featured": false
     },
@@ -678,7 +678,7 @@ const demoPortfolioData = [
         "_id": "w85",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/085.jpg",
         "featured": false
     },
@@ -686,7 +686,7 @@ const demoPortfolioData = [
         "_id": "w86",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/086.jpg",
         "featured": false
     },
@@ -694,7 +694,7 @@ const demoPortfolioData = [
         "_id": "w87",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/087.jpg",
         "featured": false
     },
@@ -702,7 +702,7 @@ const demoPortfolioData = [
         "_id": "w88",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/088.jpg",
         "featured": false
     },
@@ -710,7 +710,7 @@ const demoPortfolioData = [
         "_id": "w89",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/089.jpg",
         "featured": false
     },
@@ -718,7 +718,7 @@ const demoPortfolioData = [
         "_id": "w90",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/090.jpg",
         "featured": false
     },
@@ -726,7 +726,7 @@ const demoPortfolioData = [
         "_id": "w91",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/091.jpg",
         "featured": false
     },
@@ -734,7 +734,7 @@ const demoPortfolioData = [
         "_id": "w92",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/092.jpg",
         "featured": false
     },
@@ -742,7 +742,7 @@ const demoPortfolioData = [
         "_id": "w93",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/093.jpg",
         "featured": false
     },
@@ -750,7 +750,7 @@ const demoPortfolioData = [
         "_id": "w94",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/094.jpg",
         "featured": false
     },
@@ -758,7 +758,7 @@ const demoPortfolioData = [
         "_id": "w95",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/095.jpg",
         "featured": false
     },
@@ -766,7 +766,7 @@ const demoPortfolioData = [
         "_id": "w96",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/096.jpg",
         "featured": false
     },
@@ -774,7 +774,7 @@ const demoPortfolioData = [
         "_id": "w97",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/097.jpg",
         "featured": false
     },
@@ -782,7 +782,7 @@ const demoPortfolioData = [
         "_id": "w98",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/098.jpg",
         "featured": false
     },
@@ -790,7 +790,7 @@ const demoPortfolioData = [
         "_id": "w99",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/099.jpg",
         "featured": false
     },
@@ -798,7 +798,7 @@ const demoPortfolioData = [
         "_id": "w100",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/100.jpg",
         "featured": false
     },
@@ -806,7 +806,7 @@ const demoPortfolioData = [
         "_id": "w101",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/101.jpg",
         "featured": false
     },
@@ -814,7 +814,7 @@ const demoPortfolioData = [
         "_id": "w102",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/102.jpg",
         "featured": false
     },
@@ -822,7 +822,7 @@ const demoPortfolioData = [
         "_id": "w103",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/103.jpg",
         "featured": false
     },
@@ -830,7 +830,7 @@ const demoPortfolioData = [
         "_id": "w104",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/104.jpg",
         "featured": false
     },
@@ -838,7 +838,7 @@ const demoPortfolioData = [
         "_id": "w105",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/105.jpg",
         "featured": false
     },
@@ -846,7 +846,7 @@ const demoPortfolioData = [
         "_id": "w106",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/106.jpg",
         "featured": false
     },
@@ -854,7 +854,7 @@ const demoPortfolioData = [
         "_id": "w107",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/107.jpg",
         "featured": false
     },
@@ -862,7 +862,7 @@ const demoPortfolioData = [
         "_id": "w108",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/108.jpg",
         "featured": false
     },
@@ -870,7 +870,7 @@ const demoPortfolioData = [
         "_id": "w109",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/109.jpg",
         "featured": false
     },
@@ -878,7 +878,7 @@ const demoPortfolioData = [
         "_id": "w110",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/110.jpg",
         "featured": false
     },
@@ -886,7 +886,7 @@ const demoPortfolioData = [
         "_id": "w111",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/111.jpg",
         "featured": false
     },
@@ -894,7 +894,7 @@ const demoPortfolioData = [
         "_id": "w112",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/wix/photos/112.jpg",
         "featured": false
     },
@@ -1830,7 +1830,7 @@ const demoPortfolioData = [
         "_id": "x237",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/images/2x3a5345.jpg",
         "featured": false
     },
@@ -1838,7 +1838,7 @@ const demoPortfolioData = [
         "_id": "x238",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/images/ml2-public-enemy.jpg",
         "featured": false
     },
@@ -1846,7 +1846,7 @@ const demoPortfolioData = [
         "_id": "x239",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/images/0030_siberian-ad.jpg",
         "featured": false
     },
@@ -1854,7 +1854,7 @@ const demoPortfolioData = [
         "_id": "x240",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/images/523a5053.jpg",
         "featured": false
     },
@@ -1862,7 +1862,7 @@ const demoPortfolioData = [
         "_id": "x241",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/images/2x3a9893.jpg",
         "featured": false
     },
@@ -1870,7 +1870,7 @@ const demoPortfolioData = [
         "_id": "x242",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/images/img_9385.jpg",
         "featured": false
     },
@@ -1878,7 +1878,7 @@ const demoPortfolioData = [
         "_id": "x243",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/images/523a7583-copy.jpg",
         "featured": false
     },
@@ -1886,7 +1886,7 @@ const demoPortfolioData = [
         "_id": "x244",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/images/img_4759.jpg",
         "featured": false
     },
@@ -1894,7 +1894,7 @@ const demoPortfolioData = [
         "_id": "x245",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/images/616_1609_rj.jpg",
         "featured": false
     },
@@ -1902,7 +1902,7 @@ const demoPortfolioData = [
         "_id": "x246",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/images/616_1629.jpg",
         "featured": false
     },
@@ -1910,7 +1910,7 @@ const demoPortfolioData = [
         "_id": "x247",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "abstruct-landscapes",
         "image": "assets/images/1973775_10151971467441331_8037755000822770072_o-upscale-3x.jpg",
         "featured": false
     },
@@ -1918,7 +1918,7 @@ const demoPortfolioData = [
         "_id": "x248",
         "title": "",
         "description": "",
-        "category": "photos",
+        "category": "portraits",
         "image": "assets/images/2x3a7945-copy.jpg",
         "featured": false
     }
@@ -2112,7 +2112,6 @@ const demoVideoData = [
 ];
 
 const demoPhotoCategories = [
-    { title: 'Photos', slug: 'photos' },
     { title: 'Portraits', slug: 'portraits' },
     { title: 'Personal Work', slug: 'abstruct-landscapes' },
     { title: 'Nudes', slug: 'nudes' }

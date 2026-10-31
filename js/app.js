@@ -22,7 +22,8 @@ function imageUrlFor(source, width = 800, height = 600) {
 // YouTube Thumbnail Extractor
 function getYouTubeThumbnail(url) {
     const videoId = extractYouTubeVideoId(url);
-    return videoId ? `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` : '';
+    // hqdefault exists for every YouTube video (maxresdefault 404s for ~1/3 of them)
+    return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : '';
 }
 
 function extractYouTubeVideoId(url) {
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeStudio();
     initializeLightbox();
     initializeVideoModal();
-    initializeSiteSettings();
+    applyHashFilter(); // open category from URL hash (e.g. /#nudes)
 });
 
 async function initializeSiteSettings() {
@@ -153,9 +154,33 @@ function renderPhotoFilterButtons(categories) {
             this.classList.add('active');
             currentFilter = this.dataset.filter;
             renderPortfolio();
+            updateHashForFilter(this.dataset.filter);
         });
     });
 }
+
+// ── Hash routing (shareable category links: #portraits, #personal-work, #nudes) ──
+const HASH_TO_SLUG = { 'portraits': 'portraits', 'personal-work': 'abstruct-landscapes', 'nudes': 'nudes', 'all': 'all' };
+const SLUG_TO_HASH = { 'portraits': 'portraits', 'abstruct-landscapes': 'personal-work', 'nudes': 'nudes', 'all': 'all' };
+
+function updateHashForFilter(slug) {
+    const h = SLUG_TO_HASH[slug];
+    if (h) history.replaceState(null, '', h === 'all' ? '#portfolio' : '#' + h);
+}
+
+function applyHashFilter() {
+    const h = location.hash.replace('#', '');
+    const slug = HASH_TO_SLUG[h];
+    if (!slug) return;
+    currentFilter = slug;
+    const container = document.querySelector('.portfolio-filters');
+    container?.querySelectorAll('.filter-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.filter === slug));
+    renderPortfolio();
+    document.getElementById('portfolio')?.scrollIntoView();
+}
+
+window.addEventListener('hashchange', applyHashFilter);
 
 async function fetchPortfolioFromSanity() {
     const query = `*[_type == "photo"] | order(orderRank) {
@@ -315,7 +340,7 @@ function createVideoItem(video, index) {
         : getYouTubeThumbnail(video.youtubeUrl);
     
     div.innerHTML = `
-        <img src="${thumbnailUrl}" alt="${video.title}" class="video-thumbnail" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault');">
+        <img src="${thumbnailUrl}" alt="${video.title}" class="video-thumbnail" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('hqdefault','mqdefault');">
         <div class="play-button"></div>
         <div class="video-info">
             <h3>${video.title}</h3>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Haim — Gallery Manager</title>
+<style>
+  body { background:#111; color:#eee; font-family:-apple-system,Helvetica,Arial,sans-serif; margin:0; padding:16px; }
+  h1 { font-weight:300; }
+  .help { background:#1d2a1d; border:1px solid #2e4f2e; border-radius:8px; padding:12px 16px; line-height:1.6; max-width:820px; }
+  .toolbar { position:sticky; top:0; background:#111; padding:12px 0; z-index:10; display:flex; gap:10px; flex-wrap:wrap; align-items:center; border-bottom:1px solid #333; }
+  button { background:#2c62c9; color:#fff; border:none; border-radius:6px; padding:12px 18px; font-size:15px; cursor:pointer; min-height:44px; }
+  button.secondary { background:#444; }
+  button.export { background:#1d8a3e; font-weight:bold; }
+  select, input[type=text] { background:#222; color:#eee; border:1px solid #555; border-radius:6px; padding:10px; font-size:15px; min-height:40px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; margin-top:16px; }
+  .card { background:#1b1b1b; border-radius:8px; padding:8px; }
+  .card.changed { outline:2px solid #e0a52e; }
+  .thumbwrap { height:200px; display:flex; align-items:center; justify-content:center; overflow:hidden; background:#000; border-radius:6px; }
+  .thumbwrap img { max-width:100%; max-height:200px; transition:transform .2s; }
+  .card .fn { font-size:11px; color:#888; margin:6px 0 4px; word-break:break-all; }
+  .row { display:flex; gap:6px; }
+  .row select { flex:1; }
+  .cats { margin:14px 0; padding:12px; background:#1b1b1b; border-radius:8px; max-width:820px; }
+  .cats .catline { display:flex; gap:8px; align-items:center; margin:6px 0; }
+  #status { color:#e0a52e; font-weight:bold; }
+  @media (max-width:500px){ .grid{ grid-template-columns:repeat(2,1fr);} .thumbwrap{height:140px;} }
+</style>
+</head>
+<body>
+<h1>Gallery Manager (ניהול גלריה)</h1>
+<div class="help">
+  <b>How this works, Haim:</b><br>
+  1. Change any photo's category with its dropdown, or tap ⟳ to rotate it.<br>
+  2. Changed photos get a yellow border.<br>
+  3. When you're done, press the green <b>"Export changes"</b> button — it downloads a small file.<br>
+  4. Send that file to gail (WhatsApp/Telegram/email) — gail applies it to the live site.<br>
+  <i>Changes here are NOT live until gail commits them — this page only prepares the change file.</i>
+</div>
+
+<div class="cats" id="catManager">
+  <b>Categories</b> — rename by editing a name, ✕ deletes (its photos move to Portraits), or add a new one below.
+  <div id="catLines"></div>
+  <div class="catline"><input type="text" id="newCatName" placeholder="New category name"><button class="secondary" onclick="addCat()">Add category</button></div>
+</div>
+
+<div class="toolbar">
+  <button class="export" onclick="exportChanges()">⬇ Export changes (send file to gail)</button>
+  <button class="secondary" onclick="location.reload()">Reset (discard)</button>
+  <span id="status"></span>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<script src="js/demo-data.js"></script>
+<script>
+const items = demoPortfolioData.filter(i => i.category !== 'videos');
+const cats = demoPhotoCategories.map(c => ({...c}));
+const rotations = {};   // image path -> degrees
+const origCat = {};
+items.forEach(i => origCat[i._id] = i.category);
+
+function catTitle(slug){ const c = cats.find(c=>c.slug===slug); return c ? c.title : slug; }
+
+function renderCats(){
+  const box = document.getElementById('catLines'); box.innerHTML='';
+  cats.forEach((c,idx)=>{
+    const d=document.createElement('div'); d.className='catline';
+    const inp=document.createElement('input'); inp.type='text'; inp.value=c.title;
+    inp.onchange=()=>{ c.title=inp.value.trim()||c.title; markDirty(); renderGrid(); };
+    const del=document.createElement('button'); del.className='secondary'; del.textContent='✕';
+    del.onclick=()=>{
+      if(!confirm(`Delete category "${c.title}"? Its photos will move to Portraits.`)) return;
+      items.forEach(i=>{ if(i.category===c.slug) i.category='portraits'; });
+      cats.splice(idx,1); markDirty(); renderCats(); renderGrid();
+    };
+    d.append(inp,del); box.appendChild(d);
+  });
+}
+
+function addCat(){
+  const name=document.getElementById('newCatName').value.trim();
+  if(!name) return;
+  const slug=name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  if(cats.some(c=>c.slug===slug)){ alert('That category already exists.'); return; }
+  cats.push({title:name, slug}); document.getElementById('newCatName').value='';
+  markDirty(); renderCats(); renderGrid();
+}
+
+function markDirty(){ document.getElementById('status').textContent='Unsaved changes — press Export when done'; }
+
+function renderGrid(){
+  const grid=document.getElementById('grid'); grid.innerHTML='';
+  items.forEach(item=>{
+    const card=document.createElement('div'); card.className='card'; card.id='card-'+item._id;
+    const changed = item.category!==origCat[item._id] || rotations[item.image];
+    if(changed) card.classList.add('changed');
+    const deg = rotations[item.image]||0;
+    const sel = cats.map(c=>`<option value="${c.slug}" ${c.slug===item.category?'selected':''}>${c.title}</option>`).join('');
+    card.innerHTML=`
+      <div class="thumbwrap"><img src="${item.image}" loading="lazy" style="transform:rotate(${deg}deg)"></div>
+      <div class="fn">${item.image.split('/').slice(-2).join('/')}</div>
+      <div class="row">
+        <select onchange="setCat('${item._id}',this.value)">${sel}</select>
+        <button class="secondary" title="Rotate 90°" onclick="rotate('${item._id}')">⟳</button>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function setCat(id,slug){ const it=items.find(i=>i._id===id); it.category=slug; markDirty(); refreshCard(it); }
+function rotate(id){
+  const it=items.find(i=>i._id===id);
+  rotations[it.image]=((rotations[it.image]||0)+90)%360;
+  if(rotations[it.image]===0) delete rotations[it.image];
+  markDirty(); refreshCard(it);
+}
+function refreshCard(it){
+  const card=document.getElementById('card-'+it._id);
+  const changed = it.category!==origCat[it._id] || rotations[it.image];
+  card.classList.toggle('changed', !!changed);
+  card.querySelector('img').style.transform=`rotate(${rotations[it.image]||0}deg)`;
+}
+
+function exportChanges(){
+  const catChanges={};
+  items.forEach(i=>{ if(i.category!==origCat[i._id]) catChanges[i.image]=i.category; });
+  const payload={
+    exported_at:new Date().toISOString(),
+    note:'Haim gallery edits — gail: apply category changes to js/demo-data.js and rotate the listed JPEGs clockwise by the given degrees.',
+    categories:cats,
+    category_changes:catChanges,
+    rotations_clockwise_degrees:rotations
+  };
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='haim-gallery-changes.json';
+  a.click();
+  document.getElementById('status').textContent='Exported ✔ — now send haim-gallery-changes.json to gail';
+}
+
+renderCats(); renderGrid();
+</script>
+</body>
+</html>

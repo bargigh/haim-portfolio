@@ -83,7 +83,13 @@ body {
 .hamburger {
     display: none;
     flex-direction: column;
+    justify-content: center;
     cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.2);
 }
 
 .hamburger span {
@@ -221,10 +227,13 @@ section {
     color: #ffffff;
     border: 1px solid #333;
     padding: 10px 20px;
+    min-height: 44px; /* iOS touch target */
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: inherit;
     letter-spacing: 1px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.2);
 }
 
 .filter-btn:hover,
@@ -661,10 +670,19 @@ footer p {
         text-align: center;
         transition: 0.3s;
         padding: 2rem 0;
+        visibility: hidden;        /* off-canvas menu must never intercept taps */
+        pointer-events: none;
     }
 
     .nav-menu.active {
         left: 0;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .nav-menu a {
+        display: inline-block;
+        padding: 12px 20px;        /* ≥44px touch target */
     }
 
     .nav-menu li {
