@@ -1200,7 +1200,7 @@ const demoVideoData = [
         "_id": "v2",
         "title": "Shanti Ashanti - Fall In Love",
         "description": "",
-        "category": "videos",
+        "category": "music",
         "youtubeUrl": "https://www.youtube.com/watch?v=fOz_HXQE5iM",
         "featured": true
     },
@@ -1232,7 +1232,7 @@ const demoVideoData = [
         "_id": "v6",
         "title": "The Power of Love- Shahar Mintz",
         "description": "",
-        "category": "videos",
+        "category": "music",
         "youtubeUrl": "https://www.youtube.com/watch?v=X5AJnzjbPZ4",
         "featured": false
     },
@@ -1240,7 +1240,7 @@ const demoVideoData = [
         "_id": "v7",
         "title": "Johnathan Chaimov - Back Home (Official Music Video)",
         "description": "",
-        "category": "videos",
+        "category": "music",
         "youtubeUrl": "https://www.youtube.com/watch?v=o4DkNczuo7k",
         "featured": false
     },
@@ -1248,7 +1248,7 @@ const demoVideoData = [
         "_id": "v8",
         "title": "Y&I - L.E.M. (Official Music Video)",
         "description": "",
-        "category": "videos",
+        "category": "music",
         "youtubeUrl": "https://www.youtube.com/watch?v=b2s5rKRtjio",
         "featured": false
     },
