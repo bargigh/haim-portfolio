@@ -76,7 +76,85 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeLightbox();
     initializeVideoModal();
     applyHashFilter(); // open category from URL hash (e.g. /#nudes)
+    initHeroSlideshow();
 });
+
+// ===== Hero slideshow =====
+function initHeroSlideshow() {
+    const root = document.getElementById('heroSlideshow');
+    if (!root || typeof SLIDESHOW === 'undefined' || typeof demoPortfolioData === 'undefined') return;
+    const byId = {};
+    demoPortfolioData.forEach(i => byId[i._id] = i);
+    const slides = SLIDESHOW.map(id => byId[id]).filter(i => i && i.image);
+    if (!slides.length) return;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = slides.map((item, idx) => {
+        const d = document.createElement('div');
+        d.className = 'hero-slide' + (idx === 0 ? ' active' : '');
+        if (idx === 0) d.style.backgroundImage = `url(${item.image})`; // first slide loads immediately
+        d.dataset.src = item.image;
+        root.insertBefore(d, root.firstChild);
+        return d;
+    });
+    const loadSlide = i => {
+        const el = els[i];
+        if (el && !el.style.backgroundImage) el.style.backgroundImage = `url(${el.dataset.src})`;
+    };
+    // Lazy-load remaining slides after window load (don't compete with LCP)
+    window.addEventListener('load', () => setTimeout(() => els.forEach((_, i) => loadSlide(i)), 1500));
+
+    const dotsBox = document.getElementById('slideDots');
+    const dots = els.map((_, i) => {
+        const b = document.createElement('button');
+        b.setAttribute('aria-label', 'Slide ' + (i + 1));
+        if (i === 0) b.classList.add('active');
+        b.addEventListener('click', () => { show(i); restart(); });
+        dotsBox.appendChild(b);
+        return b;
+    });
+
+    let cur = 0, timer = null, paused = false;
+    function show(i) {
+        i = (i + els.length) % els.length;
+        loadSlide(i);
+        loadSlide((i + 1) % els.length);
+        els[cur].classList.remove('active');
+        dots[cur].classList.remove('active');
+        cur = i;
+        els[cur].classList.add('active');
+        dots[cur].classList.add('active');
+    }
+    function tick() { if (!paused) show(cur + 1); }
+    function start() { if (!reduced && !timer) timer = setInterval(tick, 5000); }
+    function restart() { if (timer) { clearInterval(timer); timer = null; } start(); }
+    start();
+
+    document.getElementById('slidePrev').addEventListener('click', () => { show(cur - 1); restart(); });
+    document.getElementById('slideNext').addEventListener('click', () => { show(cur + 1); restart(); });
+
+    const hero = root.closest('.hero') || root;
+    hero.addEventListener('mouseenter', () => paused = true);
+    hero.addEventListener('mouseleave', () => paused = false);
+
+    // Touch: pause while touching, swipe to navigate
+    let tx = null, ty = null;
+    hero.addEventListener('touchstart', e => {
+        paused = true;
+        tx = e.touches[0].clientX; ty = e.touches[0].clientY;
+    }, { passive: true });
+    hero.addEventListener('touchend', e => {
+        paused = false;
+        if (tx === null) return;
+        const dx = e.changedTouches[0].clientX - tx;
+        const dy = e.changedTouches[0].clientY - ty;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+            show(dx < 0 ? cur + 1 : cur - 1);
+            restart();
+        }
+        tx = ty = null;
+    }, { passive: true });
+}
 
 async function initializeSiteSettings() {
     try {
@@ -86,7 +164,8 @@ async function initializeSiteSettings() {
         const data = await response.json();
         if (data.result?.heroImage) {
             const heroUrl = imageUrlFor(data.result.heroImage, 1920);
-            if (heroUrl) document.querySelector('.hero-background').style.backgroundImage = `url(${heroUrl})`;
+            const heroBg = document.querySelector('.hero-background');
+            if (heroUrl && heroBg) heroBg.style.backgroundImage = `url(${heroUrl})`;
         }
         if (data.result?.aboutImage) {
             const aboutUrl = imageUrlFor(data.result.aboutImage, 800);

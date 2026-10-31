@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haim Bargig - Photographer & Cinematographer</title>
     <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="preload" as="image" href="assets/wix/photos/001.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -41,9 +42,12 @@
                     <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
                 </div>
             </div>
-            <div class="hero-background">
-                <div class="hero-overlay"></div>
+            <div class="hero-slideshow" id="heroSlideshow" aria-label="Featured photographs">
+                <button class="slide-arrow prev" id="slidePrev" aria-label="Previous slide">&#10094;</button>
+                <button class="slide-arrow next" id="slideNext" aria-label="Next slide">&#10095;</button>
+                <div class="slide-dots" id="slideDots"></div>
             </div>
+            <div class="hero-overlay"></div>
         </section>
 
         <!-- Portfolio Section -->

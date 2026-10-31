@@ -45,6 +45,15 @@
   <div class="catline"><input type="text" id="newCatName" placeholder="New category name"><button class="secondary" onclick="addCat()">Add category</button></div>
 </div>
 
+<div class="cats" id="slideManager">
+  <b>Homepage Slideshow</b> — the big slideshow at the top of the site. Reorder with ▲▼, ✕ removes, add any photo below.
+  <div id="slideLines"></div>
+  <div class="catline">
+    <select id="addSlideSel"></select>
+    <button class="secondary" onclick="addSlide()">Add to slideshow</button>
+  </div>
+</div>
+
 <div class="toolbar">
   <button class="export" onclick="exportChanges()">⬇ Export changes (send file to gail)</button>
   <button class="secondary" onclick="location.reload()">Reset (discard)</button>
@@ -58,6 +67,7 @@
 const items = demoPortfolioData.filter(i => i.category !== 'videos');
 const cats = demoPhotoCategories.map(c => ({...c}));
 const rotations = {};   // image path -> degrees
+const slideshow = (typeof SLIDESHOW !== 'undefined' ? SLIDESHOW.slice() : []);
 const origCat = {};
 items.forEach(i => origCat[i._id] = i.category);
 
@@ -86,6 +96,35 @@ function addCat(){
   if(cats.some(c=>c.slug===slug)){ alert('That category already exists.'); return; }
   cats.push({title:name, slug}); document.getElementById('newCatName').value='';
   markDirty(); renderCats(); renderGrid();
+}
+
+function renderSlides(){
+  const box=document.getElementById('slideLines'); box.innerHTML='';
+  slideshow.forEach((id,idx)=>{
+    const it=items.find(i=>i._id===id); if(!it) return;
+    const d=document.createElement('div'); d.className='catline';
+    d.innerHTML=`<img src="${it.image}" style="width:70px;height:48px;object-fit:cover;border-radius:4px" loading="lazy">
+      <span style="flex:1;font-size:12px;color:#aaa">${idx+1}. ${it.image.split('/').slice(-2).join('/')}</span>`;
+    const up=document.createElement('button'); up.className='secondary'; up.textContent='▲';
+    up.onclick=()=>{ if(idx>0){ [slideshow[idx-1],slideshow[idx]]=[slideshow[idx],slideshow[idx-1]]; markDirty(); renderSlides(); } };
+    const dn=document.createElement('button'); dn.className='secondary'; dn.textContent='▼';
+    dn.onclick=()=>{ if(idx<slideshow.length-1){ [slideshow[idx+1],slideshow[idx]]=[slideshow[idx],slideshow[idx+1]]; markDirty(); renderSlides(); } };
+    const del=document.createElement('button'); del.className='secondary'; del.textContent='✕';
+    del.onclick=()=>{ slideshow.splice(idx,1); markDirty(); renderSlides(); fillSlideSel(); };
+    d.append(up,dn,del); box.appendChild(d);
+  });
+}
+function fillSlideSel(){
+  const sel=document.getElementById('addSlideSel'); sel.innerHTML='';
+  items.filter(i=>!slideshow.includes(i._id)).forEach(i=>{
+    const o=document.createElement('option'); o.value=i._id;
+    o.textContent=`${catTitle(i.category)} — ${i.image.split('/').slice(-2).join('/')}`;
+    sel.appendChild(o);
+  });
+}
+function addSlide(){
+  const id=document.getElementById('addSlideSel').value;
+  if(id && !slideshow.includes(id)){ slideshow.push(id); markDirty(); renderSlides(); fillSlideSel(); }
 }
 
 function markDirty(){ document.getElementById('status').textContent='Unsaved changes — press Export when done'; }
@@ -131,6 +170,7 @@ function exportChanges(){
     note:'Haim gallery edits — gail: apply category changes to js/demo-data.js and rotate the listed JPEGs clockwise by the given degrees.',
     categories:cats,
     category_changes:catChanges,
+    slideshow:slideshow.slice(),
     rotations_clockwise_degrees:rotations
   };
   const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
@@ -141,7 +181,7 @@ function exportChanges(){
   document.getElementById('status').textContent='Exported ✔ — now send haim-gallery-changes.json to gail';
 }
 
-renderCats(); renderGrid();
+renderCats(); renderGrid(); renderSlides(); fillSlideSel();
 </script>
 </body>
 </html>
