@@ -298,10 +298,21 @@ function renderPortfolio() {
         grid.innerHTML = '<div class="no-items">No items found</div>';
         return;
     }
+    // Row-major masonry: distribute into column divs left-to-right so
+    // visual order matches array order for the viewer.
+    const cols = window.innerWidth <= 768 ? 2 : 3;
+    const colDivs = [];
+    for (let c = 0; c < cols; c++) {
+        const cd = document.createElement('div');
+        cd.className = 'masonry-col';
+        grid.appendChild(cd);
+        colDivs.push(cd);
+    }
+    window._masonryTarget = (i) => colDivs[i % cols];
 
     filteredData.forEach((item, index) => {
         const portfolioItem = createPortfolioItem(item, index);
-        grid.appendChild(portfolioItem);
+        window._masonryTarget(index).appendChild(portfolioItem);
     });
 }
 
@@ -666,4 +677,13 @@ window.addEventListener('scroll', function() {
             };
         });
     }
+})();
+
+// Re-render masonry on breakpoint change (2<->3 cols)
+(() => {
+    let lastCols = window.innerWidth <= 768 ? 2 : 3;
+    window.addEventListener('resize', () => {
+        const c = window.innerWidth <= 768 ? 2 : 3;
+        if (c !== lastCols) { lastCols = c; try { renderPortfolio(); } catch(e){} }
+    });
 })();
