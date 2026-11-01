@@ -80,6 +80,14 @@ const demoPortfolioData = [
         "featured": true
     },
     {
+        "_id": "w119",
+        "title": "",
+        "description": "",
+        "category": "portraits",
+        "image": "assets/wix/portraits/007.jpg",
+        "featured": false
+    },
+    {
         "_id": "w3",
         "title": "",
         "description": "",
@@ -909,14 +917,6 @@ const demoPortfolioData = [
         "description": "",
         "category": "abstruct-landscapes",
         "image": "assets/wix/photos/112.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w119",
-        "title": "",
-        "description": "",
-        "category": "portraits",
-        "image": "assets/wix/portraits/007.jpg",
         "featured": false
     },
     {
