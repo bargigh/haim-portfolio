@@ -8,12 +8,52 @@ const SLIDESHOW = ["w1", "w3", "w4", "w7", "w13", "w14", "w26", "w80", "w85", "w
 
 const demoPortfolioData = [
     {
-        "_id": "w1",
+        "_id": "w8",
         "title": "",
         "description": "",
         "category": "portraits",
-        "image": "assets/wix/photos/001.jpg",
-        "featured": true
+        "image": "assets/wix/photos/008.jpg",
+        "featured": false
+    },
+    {
+        "_id": "w14",
+        "title": "",
+        "description": "",
+        "category": "portraits",
+        "image": "assets/wix/photos/014.jpg",
+        "featured": false
+    },
+    {
+        "_id": "w5",
+        "title": "",
+        "description": "",
+        "category": "portraits",
+        "image": "assets/wix/photos/005.jpg",
+        "featured": false
+    },
+    {
+        "_id": "w7",
+        "title": "",
+        "description": "",
+        "category": "portraits",
+        "image": "assets/wix/photos/007.jpg",
+        "featured": false
+    },
+    {
+        "_id": "w9",
+        "title": "",
+        "description": "",
+        "category": "portraits",
+        "image": "assets/wix/photos/009.jpg",
+        "featured": false
+    },
+    {
+        "_id": "w13",
+        "title": "",
+        "description": "",
+        "category": "portraits",
+        "image": "assets/wix/photos/013.jpg",
+        "featured": false
     },
     {
         "_id": "w2",
@@ -21,6 +61,22 @@ const demoPortfolioData = [
         "description": "",
         "category": "portraits",
         "image": "assets/wix/photos/002.jpg",
+        "featured": true
+    },
+    {
+        "_id": "w115",
+        "title": "",
+        "description": "",
+        "category": "portraits",
+        "image": "assets/wix/portraits/003.jpg",
+        "featured": false
+    },
+    {
+        "_id": "w1",
+        "title": "",
+        "description": "",
+        "category": "portraits",
+        "image": "assets/wix/photos/001.jpg",
         "featured": true
     },
     {
@@ -40,43 +96,11 @@ const demoPortfolioData = [
         "featured": true
     },
     {
-        "_id": "w5",
-        "title": "",
-        "description": "",
-        "category": "portraits",
-        "image": "assets/wix/photos/005.jpg",
-        "featured": false
-    },
-    {
         "_id": "w6",
         "title": "",
         "description": "",
         "category": "portraits",
         "image": "assets/wix/photos/006.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w7",
-        "title": "",
-        "description": "",
-        "category": "portraits",
-        "image": "assets/wix/photos/007.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w8",
-        "title": "",
-        "description": "",
-        "category": "portraits",
-        "image": "assets/wix/photos/008.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w9",
-        "title": "",
-        "description": "",
-        "category": "portraits",
-        "image": "assets/wix/photos/009.jpg",
         "featured": false
     },
     {
@@ -101,22 +125,6 @@ const demoPortfolioData = [
         "description": "",
         "category": "portraits",
         "image": "assets/wix/photos/012.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w13",
-        "title": "",
-        "description": "",
-        "category": "portraits",
-        "image": "assets/wix/photos/013.jpg",
-        "featured": false
-    },
-    {
-        "_id": "w14",
-        "title": "",
-        "description": "",
-        "category": "portraits",
-        "image": "assets/wix/photos/014.jpg",
         "featured": false
     },
     {
@@ -903,19 +911,6 @@ const demoPortfolioData = [
         "image": "assets/wix/photos/112.jpg",
         "featured": false
     },
-    
-    
-    {
-        "_id": "w115",
-        "title": "",
-        "description": "",
-        "category": "portraits",
-        "image": "assets/wix/portraits/003.jpg",
-        "featured": false
-    },
-    
-    
-    
     {
         "_id": "w119",
         "title": "",
@@ -924,10 +919,6 @@ const demoPortfolioData = [
         "image": "assets/wix/portraits/007.jpg",
         "featured": false
     },
-    
-    
-    
-    
     {
         "_id": "w124",
         "title": "",
@@ -936,23 +927,6 @@ const demoPortfolioData = [
         "image": "assets/wix/portraits/012.jpg",
         "featured": false
     },
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     {
         "_id": "w142",
         "title": "",
@@ -961,13 +935,6 @@ const demoPortfolioData = [
         "image": "assets/wix/portraits/030.jpg",
         "featured": false
     },
-    
-    
-    
-    
-    
-    
-    
     {
         "_id": "w150",
         "title": "",
@@ -976,79 +943,6 @@ const demoPortfolioData = [
         "image": "assets/wix/portraits/038.jpg",
         "featured": false
     },
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     {
         "_id": "x232",
         "title": "",
@@ -1185,6 +1079,7 @@ const demoPortfolioData = [
         "image": "assets/images/2x3a7945-copy.jpg",
         "featured": false
     }
+
 ];
 
 const demoVideoData = [
